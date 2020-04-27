@@ -71,10 +71,34 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                  tabPanel("The Crimes",
                           column(9,
                                  h1("What crimes end up on the list?"),
+                                 h1("Total:"),
                                  p("The following chart lists the occurance of crimes on the FBI's Most Wanted Lists 
                                    for the years 1950-1969.")),
                           column(12,
-                                 mainPanel(plotOutput("crime_breakdown")))),
+                                 mainPanel(plotOutput("crime_breakdown"))),
+                          column(12,
+                                 h1("By selected year:"),
+                                 sidebarPanel(
+                                   selectInput("year", "Choose a year:",
+                                               choices = c("1950":"1969"),
+                                               selected = "1950"))),
+                          column(12,
+                                 mainPanel(
+                                   plotOutput("crime_year"))),
+                          column(12,
+                                 h1("Frequency in Crimes in At Different Times:"),
+                                 sidebarPanel(
+                                 selectInput("year", "Choose a time range:",
+                                             choices = c("1950 to 1955" = "1950:1955",
+                                                         "1955 to 1960" = "1955:1960",
+                                                         "1960 to 1965" = "1960:1965",
+                                                         "1965 to 1969" = "1965:1969",
+                                                         "Total" = "1950:1969"),
+                                             selected = "1950:1969"))),
+                          column(12,
+                                 mainPanel(
+                                   plotOutput("over_time_crime")
+                                 ))),
                  tabPanel("The Criminals",
                           column(4,
                                  h1("Demographics of Criminals"),
@@ -231,6 +255,131 @@ server <- function(input, output, session) {
       )
   })
   
+  output$crime_year <- renderPlot({
+    
+    FBI_year<- FBI %>% 
+        mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
+        mutate(date_removed = as.Date(date_removed, format="%m/%d/%Y")) %>% 
+        mutate(days = (date_removed - date_added)) %>% 
+        mutate(year = format(date_added, "%Y")) 
+    
+    crime <- FBI_year %>% 
+      filter(year == input$year) %>% 
+      pivot_longer(cols = c("additional_violent_crime",
+                           "murder",
+                           "personal_crimes", 
+                           "escapee",
+                           "criminal_enterprise",
+                           "white_collar_crime",
+                           "sexual_crimes",
+                           "crimes_against_children"),
+                  names_to = "crime",
+                  values_to = "count") %>% 
+      filter(count == 1) %>% 
+      select(crime) %>% 
+      count(crime) %>% 
+      filter(n > 1)
+    
+    ggplot(crime, aes(x = crime, y = n, fill = crime)) +
+      geom_col(stat = "identity") + 
+      scale_fill_discrete(
+        breaks=c("additional_violent_crime",
+                 "murder",
+                 "personal_crimes", 
+                 "escapee",
+                 "criminal_enterprise",
+                 "white_collar_crime",
+                 "sexual_crimes",
+                 "crimes_against_children"),
+        labels=c("Other Violent Crime", 
+                 "Murder", 
+                 "Personal Crimes",
+                 "Escape",
+                 "Criminal Enterprise",
+                 "White Collar Crime",
+                 "Sexual Crime",
+                 "Crimes Against Children")) +
+      scale_x_discrete(
+        breaks=c("additional_violent_crime",
+                 "murder",
+                 "personal_crimes", 
+                 "escapee",
+                 "criminal_enterprise",
+                 "white_collar_crime",
+                 "sexual_crimes",
+                 "crimes_against_children"),
+        labels=c("Other Violent
+                 Crime", 
+                 "Murder", 
+                 "Personal Crimes",
+                 "Escape",
+                 "Criminal Enterprise",
+                 "White Collar Crime",
+                 "Sexual Crime",
+                 "Crimes Against
+                 Children")) +
+      labs(
+        fill = "Type of Crime",
+        x = "Crime",
+        y = "Count",
+        caption = "*Personal Crimes: assault, kidnapping, attempted kidnapping, attempted murder.
+        *Additional violent crime: robbery, bank robbery, robbery with a deadly weapon."
+      ) +
+      theme_dark()
+  })
+  
+  output$over_time_crime <- renderPlot({
+    
+    FBI_year<- FBI %>% 
+      mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
+      mutate(date_removed = as.Date(date_removed, format="%m/%d/%Y")) %>% 
+      mutate(days = (date_removed - date_added)) %>% 
+      mutate(year = format(date_added, "%Y"))
+    
+    crime1 <- FBI_year %>% 
+      filter(year == input$year) %>% 
+      pivot_longer(cols = c("additional_violent_crime",
+                            "murder",
+                            "personal_crimes", 
+                            "escapee",
+                            "criminal_enterprise",
+                            "white_collar_crime",
+                            "sexual_crimes",
+                            "crimes_against_children"),
+                   names_to = "crime",
+                   values_to = "count") %>% 
+      group_by(year) %>% 
+      count(crime)
+    
+    ggplot(crime1, aes(x = year, y = n, col = crime)) +
+      geom_line(stat = "identity") + 
+      scale_color_discrete(
+        breaks=c("additional_violent_crime",
+                 "murder",
+                 "personal_crimes", 
+                 "escapee",
+                 "criminal_enterprise",
+                 "white_collar_crime",
+                 "sexual_crimes",
+                 "crimes_against_children"),
+        labels=c("Other Violent Crime", 
+                 "Murder", 
+                 "Personal Crimes",
+                 "Escape",
+                 "Criminal Enterprise",
+                 "White Collar Crime",
+                 "Sexual Crime",
+                 "Crimes Against Children")) +
+      labs(
+        fill = "Type of Crime",
+        x = "Year",
+        y = "Count",
+        caption = "*Personal Crimes: assault, kidnapping, attempted kidnapping, attempted murder.
+        *Additional violent crime: robbery, bank robbery, robbery with a deadly weapon."
+      ) +
+      theme_dark()
+  })
+  
   output$police_effect <- renderPlot({
     
     crimes <- FBI %>% 
@@ -265,6 +414,7 @@ server <- function(input, output, session) {
       theme_classic()
       
   })
+  
   
   output$gang_effect <- renderPlot({
     
