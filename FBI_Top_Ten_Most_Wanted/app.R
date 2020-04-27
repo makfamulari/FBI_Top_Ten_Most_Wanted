@@ -327,6 +327,7 @@ server <- function(input, output, session) {
         *Additional violent crime: robbery, bank robbery, robbery with a deadly weapon."
       ) +
       theme_dark()
+    
   })
   
   output$over_time_crime <- renderPlot({
@@ -343,9 +344,8 @@ server <- function(input, output, session) {
       count(.data[[input$crime]])
     
     ggplot(crime_over_time, aes(x = year, y = n)) +
+      geom_line(group = 1, color = "pink", size = .75)+
       geom_point(col = "pink") +
-      geom_line(group = 1, color = "pink", size = .75)  +
-      ylim(0, 30) +
       labs(
         x = "Year",
         y = "Count",
@@ -353,6 +353,7 @@ server <- function(input, output, session) {
         *Additional violent crime: robbery, bank robbery, robbery with a deadly weapon."
       ) +
       theme_dark()
+    
   })
   
   output$police_effect <- renderPlot({
