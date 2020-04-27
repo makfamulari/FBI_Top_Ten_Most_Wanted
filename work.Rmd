@@ -1,0 +1,144 @@
+---
+title: "Top Ten Most Wanted"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(shiny)
+library(janitor)
+library(shinythemes)
+library(ggplot2)
+library(tidyverse)
+library(lubridate)
+
+FBI <- read_csv("fbi_top_ten_1960_70 - Sheet1.csv") %>% 
+  clean_names() 
+
+```
+
+
+```{r data_to_shiny, echo = FALSE}
+file.copy("fbi_top_ten_1960_70 - Sheet1.csv", "FBI_Top_Ten_Most_Wanted")
+
+FBI1 <- FBI %>% 
+  mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
+  mutate(date_removed = as.Date(date_removed, format="%m/%d/%Y")) %>% 
+  mutate(days = (date_removed - date_added))
+
+FBI1
+
+```
+```{r mutate_practice, echo = FALSE}
+FBI1 <- FBI %>% 
+      mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
+      mutate(date_removed = as.Date(date_removed, format="%m/%d/%Y")) %>% 
+      mutate(days = (date_removed - date_added))
+
+crime <- FBI1 %>% 
+      pivot_longer(cols = c("additional_violent_crime",
+                 "murder",
+                 "personal_crimes", 
+                 "escapee",
+                 "criminal_enterprise",
+                 "white_collar_crime",
+                 "sexual_crimes",
+                 "crimes_against_children"),
+                   names_to = "crime",
+                   values_to = "count") 
+   
+    lm()
+    crime %>%
+      filter(police_victim == "1") %>% 
+      ggplot(aes(x = crime, y = days)) +
+      geom_point() +
+      labs(x = "Days on List", y = "Police Victim", 
+           title = "The Effect of Police Victims on Length on List") +
+      geom_smooth(method = "lm", se = FALSE)
+```
+
+```{r stats, echo = FALSE}
+total <- FBI %>% 
+  select(reason_for_removal) %>% 
+  count()
+
+stat <- FBI %>% 
+  select(reason_for_removal) %>% 
+  group_by(reason_for_removal) %>% 
+  count()
+
+stat
+
+arrests <- (267/304) * 100
+
+surrender <- (14/304) * 100
+
+
+arrests
+surrender
+```
+
+```{r adding_year_graph, echo = FALSE}
+
+new <- FBI1 %>% 
+  mutate(year = format(date_added, "%Y"))
+
+```
+
+```{r graph_over_time, echo = FALSE}
+
+FBI_year<- FBI %>% 
+      mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
+      mutate(date_removed = as.Date(date_removed, format="%m/%d/%Y")) %>% 
+      mutate(days = (date_removed - date_added)) %>% 
+      mutate(year = format(date_added, "%Y"))
+    
+crime1 <- FBI_year %>% 
+      filter(year == 1950:1955) %>% 
+      pivot_longer(cols = c("additional_violent_crime",
+                            "murder",
+                            "personal_crimes", 
+                            "escapee",
+                            "criminal_enterprise",
+                            "white_collar_crime",
+                            "sexual_crimes",
+                            "crimes_against_children"),
+                   names_to = "crime",
+                   values_to = "count") %>% 
+      group_by(year) %>% 
+      count(crime)
+
+crime1
+
+crime1 %>% 
+  group_by(crime) %>% 
+  ggplot(aes(x = year, y = n, group = crime, color = crime)) +
+      geom_line() + 
+      geom_point() +
+      scale_color_discrete(
+        breaks=c("additional_violent_crime",
+                 "murder",
+                 "personal_crimes", 
+                 "escapee",
+                 "criminal_enterprise",
+                 "white_collar_crime",
+                 "sexual_crimes",
+                 "crimes_against_children"),
+        labels=c("Other Violent Crime", 
+                 "Murder", 
+                 "Personal Crimes",
+                 "Escape",
+                 "Criminal Enterprise",
+                 "White Collar Crime",
+                 "Sexual Crime",
+                 "Crimes Against Children")) +
+      labs(
+        col = "Type of Crime",
+        x = "Year",
+        y = "Count",
+        caption = "*Personal Crimes: assault, kidnapping, attempted kidnapping, attempted murder.
+        *Additional violent crime: robbery, bank robbery, robbery with a deadly weapon."
+      ) +
+      theme_dark()
+```
+

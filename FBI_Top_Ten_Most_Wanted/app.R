@@ -72,12 +72,12 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                           column(9,
                                  h1("What crimes end up on the list?"),
                                  h1("Total:"),
-                                 p("The following chart lists the occurance of crimes on the FBI's Most Wanted Lists 
+                                 p("The following chart lists the frequency of crimes on the FBI's Most Wanted Lists 
                                    for the years 1950-1969.")),
                           column(12,
                                  mainPanel(plotOutput("crime_breakdown"))),
                           column(12,
-                                 h1("By selected year:"),
+                                 h1("By Selected Year:"),
                                  sidebarPanel(
                                    selectInput("year", "Choose a year:",
                                                choices = c("1950":"1969"),
@@ -86,15 +86,16 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                  mainPanel(
                                    plotOutput("crime_year"))),
                           column(12,
-                                 h1("Frequency in Crimes in At Different Times:"),
+                                 h1("Frequency of Specific Crimes:"),
                                  sidebarPanel(
-                                 selectInput("year", "Choose a time range:",
-                                             choices = c("1950 to 1955" = "1950:1955",
-                                                         "1955 to 1960" = "1955:1960",
-                                                         "1960 to 1965" = "1960:1965",
-                                                         "1965 to 1969" = "1965:1969",
-                                                         "Total" = "1950:1969"),
-                                             selected = "1950:1969"))),
+                                 selectInput("crime", "Select a crime category:",
+                                             choices = c("Crimes Against Children" = "crimes_against_children",
+                                                         "Murder" = "murder",
+                                                         "Sexual Crimes" = "sexual_crimes",
+                                                         "Other Violent Crime" = "additional_violent_crime",
+                                                         "White Collar Crime" = "white_collar_crime",
+                                                         "Escapee" = "escapee"),
+                                             selected = "murder"))),
                           column(12,
                                  mainPanel(
                                    plotOutput("over_time_crime")
@@ -162,7 +163,7 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
 server <- function(input, output, session) {
   
   output$crime_breakdown <- renderPlot({
-    crime <- FBI %>% 
+    crime_breakdown <- FBI %>% 
       select(-number,
              -name,
              -date_added,
@@ -181,7 +182,7 @@ server <- function(input, output, session) {
       count(crime) %>% 
       filter(n > 1)
     
-    ggplot(crime, aes(x = crime, y = n, fill = crime)) +
+    ggplot(crime_breakdown, aes(x = crime, y = n, fill = crime)) +
       geom_col(stat = "identity") + 
       scale_fill_discrete(
                         breaks=c("additional_violent_crime",
@@ -330,48 +331,22 @@ server <- function(input, output, session) {
   
   output$over_time_crime <- renderPlot({
     
-    FBI_year<- FBI %>% 
+    FBI_over_year<- FBI %>% 
       mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
       mutate(date_removed = as.Date(date_removed, format="%m/%d/%Y")) %>% 
       mutate(days = (date_removed - date_added)) %>% 
       mutate(year = format(date_added, "%Y"))
     
-    crime1 <- FBI_year %>% 
-      filter(year == input$year) %>% 
-      pivot_longer(cols = c("additional_violent_crime",
-                            "murder",
-                            "personal_crimes", 
-                            "escapee",
-                            "criminal_enterprise",
-                            "white_collar_crime",
-                            "sexual_crimes",
-                            "crimes_against_children"),
-                   names_to = "crime",
-                   values_to = "count") %>% 
+    crime_over_time <- FBI_year %>% 
+      filter(! (.data[[input$crime]] == 0)) %>% 
       group_by(year) %>% 
-      count(crime)
+      count(.data[[input$crime]])
     
-    ggplot(crime1, aes(x = year, y = n, col = crime)) +
-      geom_line(stat = "identity") + 
-      scale_color_discrete(
-        breaks=c("additional_violent_crime",
-                 "murder",
-                 "personal_crimes", 
-                 "escapee",
-                 "criminal_enterprise",
-                 "white_collar_crime",
-                 "sexual_crimes",
-                 "crimes_against_children"),
-        labels=c("Other Violent Crime", 
-                 "Murder", 
-                 "Personal Crimes",
-                 "Escape",
-                 "Criminal Enterprise",
-                 "White Collar Crime",
-                 "Sexual Crime",
-                 "Crimes Against Children")) +
+    ggplot(crime_over_time, aes(x = year, y = n)) +
+      geom_point(col = "pink") +
+      geom_line(group = 1, color = "pink", size = .75)  +
+      ylim(0, 30) +
       labs(
-        fill = "Type of Crime",
         x = "Year",
         y = "Count",
         caption = "*Personal Crimes: assault, kidnapping, attempted kidnapping, attempted murder.
@@ -451,7 +426,6 @@ server <- function(input, output, session) {
   })
     
 }
-
 
 
 
