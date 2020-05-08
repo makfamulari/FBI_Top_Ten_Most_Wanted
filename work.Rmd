@@ -10,6 +10,7 @@ library(janitor)
 library(shinythemes)
 library(ggplot2)
 library(tidyverse)
+library(broom)
 library(lubridate)
 
 FBI <- read_csv("FBI_Top_Ten_Most_Wanted/FBI_full - Sheet1.csv") %>% 
@@ -23,10 +24,37 @@ FBI1 <- FBI %>%
   mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
   mutate(date_removed = as.Date(date_removed, format="%m/%d/%Y")) %>% 
   mutate(days = (date_removed - date_added)) %>% 
-  mutate(year = as.Date(date_added, format = "%Y"))
+  mutate(days = as.numeric(days))
 
 FBI1
 
+```
+
+```{r}
+
+Edit <- FBI1 %>% 
+  mutate(police_victim = as.factor(police_victim))
+
+lm <- lm(days ~ police_victim, data = Edit) %>% 
+  tidy(conf.int = TRUE) %>% 
+  select(term, estimate, conf.low, conf.high, std.error) 
+
+lm
+
+ggplot(lm, aes(x = term, y = estimate)) +
+  geom_errorbar(aes(ymin = estimate-std.error, ymax = estimate+std.error), width = 0.1) +
+  geom_line() +
+  geom_point() +
+  scale_x_discrete(
+    breaks = c("(Intercept)", "police_victim1"),
+    labels = c("No", "Yes")
+  ) +
+  labs(
+    title = "Estimated Length on List (in Days) as Related to Police Victims",
+    subtitle = "Using a Linear Regression Showing Upper and Lower Confidence Intervals",
+    x = "Police Victim?",
+    y = "Length on List (Days)"
+  )
 ```
 
 ```{r mutate_practice, echo = FALSE}

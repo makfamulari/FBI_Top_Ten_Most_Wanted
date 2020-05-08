@@ -11,6 +11,7 @@ library(shiny)
 library(janitor)
 library(lubridate)
 library(shinythemes)
+library(broom)
 library(ggplot2)
 library(tidyverse)
 
@@ -120,7 +121,9 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                                            "Nationality" = "nationality"),
                                                selected = "race")),
                                  mainPanel(
-                                   plotOutput("distPlot")))),
+                                   plotOutput("distPlot"))),
+                          column(7,
+                                 h1("Mugshots of the Top Ten Most Wanted Through History"))),
                  tabPanel("Special Cases",
                  column(4,
                         h1("Do law enforcement victims effect outcomes?"),
@@ -128,13 +131,13 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                           is plotted below. Note: law enforcement victims include police officers, fish and game wardens, detectives,
                           air marshalls, sheriffs, highway patrol officers, and any other uniformed officer. Victimization includes
                           attempted assault/murder/kidnapping, as well as actualized assault/murder/kidnapping.")),
-                 column(12,
+                 column(10,
                         mainPanel(plotOutput("police_effect"))),
                  column(4,
                         h1("Does criminal organization affiliation effect outcomes?"),
                         p("Criminal organizations are defined as gangs, mob, or other affiliations with criminal groups. The 
                           relationship between criminal organization affiliation and days on the list is graphed below.")),
-                 column(12,
+                 column(10,
                         mainPanel(plotOutput("gang_effect"))),
                  column(4,
                         h1("Does other group organization crime effect outcome?"),
@@ -142,31 +145,50 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                           groups. Examples include Warren Jeffs, whose crimes (child sexual assault) were commited under the Fundamentalist
                           Church of Jesus Christ of Latter-Day Saints. Another example would be Clayton Lee Waagner, placed on the list for
                           a conviction of bank robbery and anti-abortion terrorism.")),
-                 column(12,
+                 column(10,
                         mainPanel(plotOutput("other_groups")))),
                  tabPanel("Findings",
                           column(5,
                           h1("Efficacy"),
-                          p("Of the observations in this dataset, 87.83% of the fugitives were apprehended. An additional
-                            4.6% surrendered."),
-                          p("- 5 fugitives died during their placement on the list."),
-                          p("- 4 fugitives were killed during arrest."),
-                          p(" - 1 fugitive commited suicide during his time on the list"),
-                          p("- 13 fugitives were removed from the list for no longer qualifying"),
-                          h1("Crimes"),
-                          p("For the two decades following the creation of the FBI's Most Wanted Fugitives List,
-                            the most common crime fell under the category of Other Violent Crimes, which included assault,
-                            robbery, and bank heists (armed or otherwise). The other most common categories included
-                            murder, personal crimes, and escapees."),
+                          p("Of the observations in this dataset, 83.56% of the fugitives were apprehended. An additional
+                            4.78% surrendered."),
+                          p("- 10 fugitives died during their placement on the list."),
+                          p("- 12 fugitives were killed during arrest."),
+                          p("- 5 fugitives commited suicide during their time on the list"),
+                          p("- 24 fugitives were removed from the list for no longer meeting the qualifying criteria or 
+                            due to their cases being dismissed"),
+                          h1("The Crimes"),
+                          p("For entirety of the FBI's Most Wanted Fugitives List,
+                            the most common crime fell under the category of Other Violent Crimes, which includes assault,
+                            robbery, bank heists (armed or otherwise), and other crime. Murder was also consistently
+                            high in each given decade of the data."),
+                          p("Crimes that remained mostly static, but were not particularily prevalent, included
+                            Crimes Against Children and Sexual Crimes."),
+                          p("A few types of crime peaked in the earlier years of the FBI's Most Wanted List.
+                            These included escapees and white collar crime."),
+                          p("Crimes relating to ideological groups emerged and peaked in the 1970s. 
+                            Terrorism first emerged in the 1990s and quickly dissipated."),
                           h1("The Criminals"),
-                          p("For the years 1950-1969, the average fugitive on the FBI's Most Wanted List was white,
-                            male, and american."),
+                          p("For all years of the FBI's Most Wanted List, the average fugitive on the FBI's Most Wanted List was white,
+                            male, and american. Nationality and race of the fugitives differed from this average slightly in later years.
+                            However, female fugitives remained continuously rare (with a total of ten women on the list)."),
                           h1("Special Cases"),
-                          p("Method: to determine connection between special cases and outcomes, a generalized linear
-                            model was used."),
-                          p("Findings: The difference in duration on the list was not significant between those fugitives who had
-                            law enforcement victims and those who did not. Those fugitives that had affiliations to organized
-                            crime remained on the lists slightly longer compared to fugitives without said affiliation.")
+                          h3("Method:"),
+                          p("To determine connection between special cases and outcomes, a generalized linear
+                            model was used which mapped the upper and lower confidence intervals for estimated time on list
+                            according to special case."),
+                          h3("Findings:"),
+                          p("When law enforcement victims were involved in the case of the fugitive, the average length
+                            on the list was lower. This suggests that law enforcement victims are tied to faster capture.
+                            It is important to note that the confidence intervals are large, likely due to outliers that skew 
+                            the data."),
+                          p("When fugitives were tied to criminal organizations, the average length on the list was longer.
+                            This may be due to the fact that early criminal organizations in the dataset, such as mafia leaders,
+                            have access to more resources to evade capture. Again, the confidence intervals are rather sprawling,
+                            so a clear conclusion cannot be made."),
+                          p("When fugitives were tied to ideological organizations, the average length on the list was significantly
+                            higher. The same confidence interval pattern is observed. However, the difference in length may
+                            indicate that ideological affiliations are correlated with longer amounts of time evading capture.")
                           )))
 
 
@@ -426,7 +448,7 @@ server <- function(input, output, session) {
         x = "Police Victim?",
         y = "Length on List (Days)"
       ) +
-      theme_dark()
+      theme_dark() 
       
   })
   
