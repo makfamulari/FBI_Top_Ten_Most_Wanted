@@ -142,8 +142,7 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                    Most Wanted Fugitive List since its inception in 1950 to 2020."),
                                  mainPanel(
                                    slickROutput("historical",
-                                                width='100%',
-                                                height='70%')
+                                                width='100%')
                                  )))),
                  tabPanel("Special Cases",
                  column(4,
@@ -343,14 +342,14 @@ server <- function(input, output, session) {
   })
   
   output$slick_pics <- renderSlickR({
-    imgs <- list.files("png_pics", pattern = ".png")
+    imgs <- list.files("png_pics", pattern = ".png", full.names = TRUE)
     slickR(imgs, slideId = "sld1")
     
   })
   
   output$historical <- renderSlickR({
-    imgs <- list.files("Pictures", pattern = ".png")
-    slickR(imgs, slideId = "sld2") 
+    imgs1 <- list.files("historical", pattern = ".png", full.names = TRUE)
+    slickR(imgs1, slideId = "sld2") 
     
   })
   
