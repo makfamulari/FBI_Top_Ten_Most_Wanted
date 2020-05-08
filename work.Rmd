@@ -13,6 +13,17 @@ library(tidyverse)
 library(broom)
 library(lubridate)
 
+pdf_convert("brown.pdf", format = "png")
+pdf_convert("patel.pdf", format = "png")
+pdf_convert("castillo.pdf", format = "png")
+pdf_convert("jimenez.pdf", format = "png")
+pdf_convert("said.pdf", format = "png")
+pdf_convert("flores.pdf", format = "png")
+pdf_convert("palmer.pdf", format = "png")
+pdf_convert("mederos.pdf", format = "png")
+pdf_convert("quintero.pdf", format = "png")
+pdf_convert("fisher.pdf", format = "png")
+
 FBI <- read_csv("FBI_Top_Ten_Most_Wanted/FBI_full - Sheet1.csv") %>% 
   clean_names() 
 ```

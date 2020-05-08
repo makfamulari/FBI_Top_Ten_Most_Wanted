@@ -24,16 +24,6 @@ library(slickR)
 FBI <- read_csv("FBI_full - Sheet1.csv") %>% 
   clean_names() 
 
-pdf_convert("brown.pdf", format = "png")
-pdf_convert("patel.pdf", format = "png")
-pdf_convert("castillo.pdf", format = "png")
-pdf_convert("jimenez.pdf", format = "png")
-pdf_convert("said.pdf", format = "png")
-pdf_convert("flores.pdf", format = "png")
-pdf_convert("palmer.pdf", format = "png")
-pdf_convert("mederos.pdf", format = "png")
-pdf_convert("quintero.pdf", format = "png")
-pdf_convert("fisher.pdf", format = "png")
 
 # Define UI for application that draws a histogram
 ui <- navbarPage(theme = shinytheme("sandstone"),
@@ -59,7 +49,7 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                  p("- The criminal no longer fits the criteria"),
                                  h1("Purpose"),
                                  p("The purpose of this project is to investigate the members of the FBI's Top Ten Most
-                                   Wanted list from the years 1950-2020. Specifically, we aim to discover the types of
+                                   Wanted list from the year it was created (1950) to present day(2020). Specifically, we aim to discover the types of
                                    criminals that merit placement based upon biographical information and the nature of their
                                    crimes. The list's members beginning in the year 1950 and to the year 2020 will be
                                    studied."),
@@ -127,7 +117,8 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                    plotOutput("over_time_crime")
                                  ))),
                  tabPanel("The Criminals",
-                          column(7,
+                          tabsetPanel(
+                          tabPanel("Demographics",
                                  h1("Demographics of Criminals"),
                                  p("To view the demographics of the criminals placed on the FBI's Most Wanted List, 
                                    please select a demographic characteristic."),
@@ -139,15 +130,21 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                                selected = "race")),
                                  mainPanel(
                                    plotOutput("distPlot"))),
-                          column(12,
+                          tabPanel("Current List",
                                  h1("Current Top Ten Most Wanted Fugitives"),
                                  p("To view the current members of the Top Ten Most Wanted Fugitive
-                                   List, please click on the arrows below.")),
+                                   List, please click on the arrows below."),
                           mainPanel(
-                            align = "center",
-                            slickROutput("slick_pics",
-                                         width = '100%', 
-                                         height = '200px'))),
+                            slickROutput("slick_pics"))),
+                          tabPanel("Historical List",
+                                 h1("Historical Top Ten Most Wanted Fugitives:"),
+                                 p("Below are the pictures of every fugitive placed on the FBI's
+                                   Most Wanted Fugitive List since its inception in 1950 to 2020."),
+                                 mainPanel(
+                                   slickROutput("historical",
+                                                width='100%',
+                                                height='70%')
+                                 )))),
                  tabPanel("Special Cases",
                  column(4,
                         h1("Do law enforcement victims effect outcomes?"),
@@ -347,8 +344,14 @@ server <- function(input, output, session) {
   
   output$slick_pics <- renderSlickR({
     imgs <- list.files("png_pics", pattern = ".png")
-    slick <- slickR(imgs) 
-    slick + settings(centerMode = TRUE)
+    slickR(imgs, slideId = "sld1")
+    
+  })
+  
+  output$historical <- renderSlickR({
+    imgs <- list.files("Pictures", pattern = ".png")
+    slickR(imgs, slideId = "sld2") 
+    
   })
   
   output$crime_year <- renderPlot({
