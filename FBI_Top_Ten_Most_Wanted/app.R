@@ -109,13 +109,12 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                    plotOutput("over_time_crime")
                                  ))),
                  tabPanel("The Criminals",
-                          column(4,
+                          column(7,
                                  h1("Demographics of Criminals"),
                                  p("To view the demographics of the criminals placed on the FBI's Most Wanted List, 
-                                   please select a demographic characteristic.")),
-                          column(7,
+                                   please select a demographic characteristic."),
                                  sidebarPanel(
-                                   selectInput("demographics", "Choose a demographic characteristic:",
+                                  selectInput("demographics", "Choose a demographic characteristic:",
                                                choices = c("Race" = "race", 
                                                            "Gender" = "gender",
                                                            "Nationality" = "nationality"),
@@ -251,6 +250,7 @@ server <- function(input, output, session) {
   
   output$distPlot <- renderPlot({
     
+    
     pie_chart <- FBI %>% 
       filter(! (.data[[input$demographics]] == 0)) %>% 
       group_by(.data[[input$demographics]]) %>% 
@@ -259,9 +259,8 @@ server <- function(input, output, session) {
     
     pie_chart %>% 
       ggplot(aes(x = "", y = n, fill = .data[[input$demographics]])) +
-      geom_bar(width = 1, stat = "identity") +
+      geom_bar(width = 1, stat = "identity", col = "grey") +
       coord_polar("y", start = 0) + 
-      scale_fill_brewer(palette = "Spectral") +
       theme_dark() +
       theme(axis.text = element_blank(),
             axis.ticks = element_blank(),
