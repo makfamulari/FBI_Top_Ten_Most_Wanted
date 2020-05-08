@@ -14,13 +14,13 @@ library(shinythemes)
 library(ggplot2)
 library(tidyverse)
 
-FBI <- read_csv("fbi_top_ten_1960_70 - Sheet1.csv") %>% 
+FBI <- read_csv("FBI_full - Sheet1.csv") %>% 
   clean_names() 
 
 
 # Define UI for application that draws a histogram
 ui <- navbarPage(theme = shinytheme("sandstone"),
-                 "The FBI's Top Ten Most Wanted List (1950-1969)",
+                 "The FBI's Top Ten Most Wanted List",
                  tabPanel("About",
                           column(6,
                                  h1("Background"),
@@ -42,9 +42,9 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                  p("- The criminal no longer fits the criteria"),
                                  h1("Purpose"),
                                  p("The purpose of this project is to investigate the members of the FBI's Top Ten Most
-                                   Wanted list from the years 1960-1969. Specifically, we aim to discover the types of
+                                   Wanted list from the years 1950-2020. Specifically, we aim to discover the types of
                                    criminals that merit placement based upon biographical information and the nature of their
-                                   crimes. The list's members beginning in the year 1950 and to the year 1969 will be
+                                   crimes. The list's members beginning in the year 1950 and to the year 2020 will be
                                    studied."),
                                  h1("Data"),
                                  p("There are no current existing databases aggregating information on members of the 
@@ -73,14 +73,20 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                  h1("What crimes end up on the list?"),
                                  h1("Total:"),
                                  p("The following chart lists the frequency of crimes on the FBI's Most Wanted Lists 
-                                   for the years 1950-1969.")),
+                                   for the years 1950-2019.")),
                           column(12,
                                  mainPanel(plotOutput("crime_breakdown"))),
                           column(12,
-                                 h1("By Selected Year:"),
+                                 h1("By Selected Decade:"),
                                  sidebarPanel(
-                                   selectInput("year", "Choose a year:",
-                                               choices = c("1950":"1969"),
+                                   selectInput("decade", "Choose a time period:",
+                                               choices = c("1950s" = "1950",
+                                                           "1960s" = "1960",
+                                                           "1970s" = "1970",
+                                                           "1980s" = "1980",
+                                                           "1990s" = "1990",
+                                                           "2000s" = "2000",
+                                                           "2010s" = "2010"),
                                                selected = "1950"))),
                           column(12,
                                  mainPanel(
@@ -93,6 +99,8 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                                          "Murder" = "murder",
                                                          "Sexual Crimes" = "sexual_crimes",
                                                          "Other Violent Crime" = "additional_violent_crime",
+                                                         "Politically Motivated Crime" = "political_group",
+                                                         "Terrorism" = "terrorism",
                                                          "White Collar Crime" = "white_collar_crime",
                                                          "Escapee" = "escapee"),
                                              selected = "murder"))),
@@ -103,8 +111,8 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                  tabPanel("The Criminals",
                           column(4,
                                  h1("Demographics of Criminals"),
-                                 p("To view the demographics of the criminals placed on the FBI's Most Wanted List from
-                                   the years 1950 to 1969, please select a demographic characteristic.")),
+                                 p("To view the demographics of the criminals placed on the FBI's Most Wanted List, 
+                                   please select a demographic characteristic.")),
                           column(7,
                                  sidebarPanel(
                                    selectInput("demographics", "Choose a demographic characteristic:",
@@ -173,7 +181,7 @@ server <- function(input, output, session) {
              -race,
              -nationality,
              -gender,
-             - police_victim) %>% 
+             -police_victim) %>% 
       pivot_longer(everything(),
                    names_to = "crime",
                    values_to = "count") %>% 
@@ -189,6 +197,8 @@ server <- function(input, output, session) {
                                  "murder",
                                  "personal_crimes", 
                                  "escapee",
+                                 "political_group",
+                                 "terrorism",
                                  "criminal_enterprise",
                                  "white_collar_crime",
                                  "sexual_crimes",
@@ -197,6 +207,8 @@ server <- function(input, output, session) {
                                  "Murder", 
                                  "Personal Crimes",
                                  "Escape",
+                                 "Politically Motivated Crime",
+                                 "Terrorism",
                                  "Criminal Enterprise",
                                  "White Collar Crime",
                                  "Sexual Crime",
@@ -206,6 +218,8 @@ server <- function(input, output, session) {
                  "murder",
                  "personal_crimes", 
                  "escapee",
+                 "political_group",
+                 "terrorism",
                  "criminal_enterprise",
                  "white_collar_crime",
                  "sexual_crimes",
@@ -213,20 +227,23 @@ server <- function(input, output, session) {
         labels=c("Other Violent
     Crime", 
                  "Murder", 
-                 "Personal Crimes",
+                 "Personal",
                  "Escape",
+                 "Political",
+                 "Terrorism",
                  "Criminal Enterprise",
-                 "White Collar Crime",
-                 "Sexual Crime",
+                 "White Collar",
+                 "Sexual",
                  "Crimes Against
     Children")) +
       labs(
-        title = "Frequency of Crimes on the List (1950-1969)",
+        title = "Frequency of Crimes on the List (Total)",
         fill = "Type of Crime",
         x = "Crime",
         y = "Count",
         caption = "*Personal Crimes: assault, kidnapping, attempted kidnapping, attempted murder.
-        *Additional violent crime: robbery, bank robbery, robbery with a deadly weapon."
+        *Additional violent crime: robbery, bank robbery, robbery with a deadly weapon.
+        *Politically motivated: crimes committed in the name of political movements/groups."
       ) +
       theme_dark()
     
@@ -264,12 +281,14 @@ server <- function(input, output, session) {
         mutate(days = (date_removed - date_added)) %>% 
         mutate(year = format(date_added, "%Y")) 
     
-    crime <- FBI_year %>% 
-      filter(year == input$year) %>% 
+    crime <- FBI %>% 
+      filter(decade == input$decade) %>% 
       pivot_longer(cols = c("additional_violent_crime",
                            "murder",
                            "personal_crimes", 
                            "escapee",
+                           "political_group",
+                           "terrorism",
                            "criminal_enterprise",
                            "white_collar_crime",
                            "sexual_crimes",
@@ -288,6 +307,8 @@ server <- function(input, output, session) {
                  "murder",
                  "personal_crimes", 
                  "escapee",
+                 "political_group",
+                 "terrorism",
                  "criminal_enterprise",
                  "white_collar_crime",
                  "sexual_crimes",
@@ -296,6 +317,8 @@ server <- function(input, output, session) {
                  "Murder", 
                  "Personal Crimes",
                  "Escape",
+                 "Politically Motivated",
+                 "Terrorism",
                  "Criminal Enterprise",
                  "White Collar Crime",
                  "Sexual Crime",
@@ -305,20 +328,24 @@ server <- function(input, output, session) {
                  "murder",
                  "personal_crimes", 
                  "escapee",
+                 "political_group",
+                 "terrorism",
                  "criminal_enterprise",
                  "white_collar_crime",
                  "sexual_crimes",
                  "crimes_against_children"),
         labels=c("Other Violent
-                 Crime", 
+      Crime", 
                  "Murder", 
-                 "Personal Crimes",
+                 "Personal",
                  "Escape",
+                 "Political",
+                 "Terror",
                  "Criminal Enterprise",
-                 "White Collar Crime",
-                 "Sexual Crime",
+                 "White Collar",
+                 "Sexual",
                  "Crimes Against
-                 Children")) +
+      Children")) +
       labs(
         fill = "Type of Crime",
         x = "Crime",
@@ -336,22 +363,23 @@ server <- function(input, output, session) {
       mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
       mutate(date_removed = as.Date(date_removed, format="%m/%d/%Y")) %>% 
       mutate(days = (date_removed - date_added)) %>% 
-      mutate(year = format(date_added, "%Y"))
+      mutate(year = format(as.Date(date_added, format = "%m/%d/%Y"), "%Y"))
     
-    crime_over_time <- FBI_year %>% 
+    crime_over_time <- FBI_over_year %>% 
       filter(! (.data[[input$crime]] == 0)) %>% 
-      group_by(year) %>% 
-      count(.data[[input$crime]])
+      group_by(decade) %>% 
+      count()
     
-    ggplot(crime_over_time, aes(x = year, y = n)) +
+    ggplot(crime_over_time, aes(x = decade, y = n)) +
       geom_line(group = 1, color = "pink", size = .75)+
+      ylim(0, 30) +
       geom_point(col = "pink") +
       labs(
         x = "Year",
         y = "Count",
         caption = "*Personal Crimes: assault, kidnapping, attempted kidnapping, attempted murder.
         *Additional violent crime: robbery, bank robbery, robbery with a deadly weapon."
-      ) +
+      )  +
       theme_dark()
     
   })

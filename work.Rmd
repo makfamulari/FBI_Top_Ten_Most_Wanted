@@ -12,23 +12,23 @@ library(ggplot2)
 library(tidyverse)
 library(lubridate)
 
-FBI <- read_csv("fbi_top_ten_1960_70 - Sheet1.csv") %>% 
+FBI <- read_csv("FBI_Top_Ten_Most_Wanted/FBI_full - Sheet1.csv") %>% 
   clean_names() 
-
 ```
 
 
 ```{r data_to_shiny, echo = FALSE}
-file.copy("fbi_top_ten_1960_70 - Sheet1.csv", "FBI_Top_Ten_Most_Wanted")
 
 FBI1 <- FBI %>% 
   mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
   mutate(date_removed = as.Date(date_removed, format="%m/%d/%Y")) %>% 
-  mutate(days = (date_removed - date_added))
+  mutate(days = (date_removed - date_added)) %>% 
+  mutate(year = as.Date(date_added, format = "%Y"))
 
 FBI1
 
 ```
+
 ```{r mutate_practice, echo = FALSE}
 FBI1 <- FBI %>% 
       mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 

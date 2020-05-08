@@ -1,0 +1,524 @@
+Number,Name,Date Added,Date Removed,Decade,Reason for Removal,Race,Gender,Nationality,Crimes Against Children,Murder,Sexual Crimes,Personal Crimes,Additional Violent Crime,Political Group,White Collar Crime,Terrorism,Criminal Enterprise,Escapee,Police Victim
+1,Thomas James Holden,3/14/1950,6/23/1951,1950,arrested,white,male ,american,0,1,0,0,1,0,0,0,1,1,0
+2,Morley Vernon King,3/15/1950,10/31/1951,1950,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+3,William Raymond Nesbit,3/16/1950,3/18/1950,1950,arrested,white,male ,american,0,1,0,0,1,0,0,0,1,0,0
+4,Henry Randolph Mitchell,3/17/1950,7/18/1958,1950,removed,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+5,Omar August Pinson,3/18/1950,8/28/1950,1950,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,0,1
+6,Lee Emory Downs,3/20/1950,4/7/1950,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+7,Orba Elmer Jackson,3/21/1950,3/23/1950,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+8,Glen Roy Wright,3/22/1950,12/13/1950,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+9,Henry Harland Shelton,3/23/1950,6/23/1950,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,0
+10,Morris Guralnick,3/24/1950,12/15/1950,1950,arrested,white,male ,american,0,0,0,1,0,0,0,0,0,1,1
+11,William Francis Sutton,3/20/1950,2/18/1952,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,0
+12,Stephen William Davenport,4/4/1950,5/5/1950,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+13,Henry Clay Tollett,4/11/1950,6/4/1951,1950,killed,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+14,Frederick J. Tenuto,5/24/1950,3/9/1964,1950,removed,white,male ,american,0,0,0,0,1,0,0,0,1,1,0
+15,Thomas Kling,7/17/1950,2/20/1952,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+16,Meyer Dembin,9/5/1950,11/26/1951,1950,surrender,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+17,Courtney Townsend Taylor,1/8/1951,2/16/1951,1950,arrested,white,male ,american,0,0,0,0,0,0,1,0,0,0,0
+18,Joseph Franklin Bent Jr.,1/9/1951,8/29/1952,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,0
+19,Harry H. Burton,3/9/1951,2/7/1952,1950,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+20,Joseph Paul Cato,6/27/1951,6/22/1951,1950,surrender,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+21,Anthony Brancato,6/27/1951,6/29/1951,1950,surrender,white,male ,american,0,1,0,0,1,0,0,0,1,0,0
+22,Frederick Emerson Peters,7/2/1951,1/15/1952,1950,arrested,white,male ,american,0,0,0,0,0,0,1,0,0,0,0
+23,Ernest Tait,7/11/1951,7/12/1951,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+24,Ollie Gene Embry,7/25/1951,8/5/1951,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+25,Giachino Anthony Baccolla,8/20/1951,12/10/1951,1950,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+26,Raymond Edward Young,11/12/1951,11/16/1951,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+27,John Thomas Hill,12/10/1951,8/16/1952,1950,arrested,black,male ,american,0,1,0,0,0,0,0,0,0,0,0
+28,George Arthur Heroux,12/19/1951,7/25/1952,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+29,Sydney Gordon Martin,1/7/1952,11/27/1953,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,0
+30,Gerhard Arthur Puff,1/28/1952,7/26/1952,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+31,Thomas Edward Young,2/21/1952,9/23/1952,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+32,Kenneth Lee Maurer,2/27/1952,1/8/1953,1950,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+33,Isaie Aldy Beausoleil,3/3/1952,6/25/1953,1950,arrested,white,male ,canadian,0,1,0,0,0,0,0,0,0,0,0
+34,Leonard Joseph Zalutsky,8/5/1952,9/8/1952,1950,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,1,1
+35,William Merle Martin,8/11/1952,8/30/1952,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+36,James Eddie Diggs,8/27/1952,12/14/1961,1950,removed,black,male ,american,0,1,0,0,0,0,0,0,0,0,1
+37,Nick George Montos,9/8/1952,8/23/1954,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,1,0,0
+38,Theodore Richard Byrd Jr,9/10/1952,2/21/1953,1950,arrested,white,male ,american,0,0,0,1,1,0,1,0,0,0,0
+39,Harden Collins Kemper,9/17/1952,1/1/1953,1950,arrested,white,male ,american,0,0,0,0,0,0,1,0,1,0,0
+40,John Joseph Brennan,10/6/1952,1/23/1953,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+41,Charles Patrick Shue,1/15/1953,2/13/1953,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+42,Lawson David Shirk Butler,1/22/1953,4/21/1953,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,0
+43,Joseph James Brletic,2/9/1953,2/10/1953,1950,arrested,white,male ,american,0,0,1,1,1,0,0,0,0,1,0
+44,David Dallas Taylor,3/3/1953,5/26/1953,1950,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,1,1
+45,Perlie Miller,3/4/1953,3/5/1953,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+46,Fred William Bowerman,3/5/1953,4/24/1953,1950,killed,white,male ,american,0,0,0,1,1,0,0,0,0,1,1
+47,Robert Benton Mathus,3/16/1953,3/19/1953,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+48,Floyd Allen Hill,3/30/1953,4/18/1953,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+49,Joseph Levy,5/1/1953,4/30/1953,1950,arrested,white,male ,american,0,0,0,0,0,0,1,0,0,0,0
+50,Arnold Hinson,5/4/1953,11/7/1953,1950,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,0,0
+51,Gordon Lee Cooper,5/11/1953,6/11/1953,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,1
+52,Fleet Robert Current,5/18/1953,7/12/1953,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+53,Donald Charles Fitterer,6/8/1953,6/21/1953,1950,arrested,white,male ,american,0,1,0,0,0,0,1,0,0,0,0
+54,John Raleigh Cooke,6/22/1953,10/20/1953,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+55,Jack Gordon White,7/6/1953,8/27/1953,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+56,Alex Richard Bryant,7/14/1953,1/26/1954,1950,arrested,white,male ,american,0,0,1,0,1,0,0,0,0,1,0
+57,George William Krendich,7/27/1953,10/11/1953,1950,suicide,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+58,Lloyd Reed Russell,9/8/1953,8/3/1954,1950,killed,white,male ,american,0,0,0,1,1,0,0,0,0,1,1
+59,Edwin Sanford Garrison,10/26/1953,11/3/1953,1950,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,1,0
+60,Franklin James Wilson,11/2/1953,1/18/1954,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+61,Charles E. Johnson,11/12/1953,12/28/1953,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+62,Thomas Jackson Massingale,11/18/1953,11/26/1953,1950,arrested,white,male ,american,0,0,0,1,0,0,0,0,0,0,0
+63,Peter Edward Kenzik,12/7/1953,1/26/1955,1950,arrested,white,male ,american,0,1,0,1,0,0,0,0,0,0,0
+64,Thomas Everett Dickerson,12/10/1953,12/21/1953,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+65,Chester Lee Davenport,1/6/1954,1/7/1954,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+66,Alex Whitmore,1/11/1954,5/10/1954,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+67,Everett Lowell Krueger,1/25/1954,2/15/1954,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+68,Apee Hamp Chapman,2/3/1954,2/10/1954,1950,arrested,black,male ,american,0,1,0,0,0,0,0,0,0,0,0
+69,Nelson Robert Duncan,2/8/1954,2/21/1954,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+70,Charles Falzone,2/24/1954,8/17/1955,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+71,Basil Kingsley Beck,3/1/1954,3/3/1954,1950,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,1,0
+72,Clarence Dye,3/8/1954,8/3/1955,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+73,James William Lofton,3/16/1954,3/17/1954,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+74,Sterling Groom,4/2/1954,4/21/1954,1950,arrested,black,male ,american,0,1,0,1,1,0,0,0,0,0,0
+75,Raymond Louis Owen Menard,5/3/1954,5/5/1954,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,1,0,0
+76,John Alfred Hopkins,5/18/1954,6/7/1954,1950,arrested,white,male ,american,0,1,0,1,1,0,0,0,0,1,1
+77,Otto Austin Loel,5/21/1954,1/17/1955,1950,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+78,David Daniel Keegan,6/21/1954,12/13/1963,1950,removed,white,male ,american,0,1,0,0,1,0,0,0,0,0,0
+79,Walter James Wilkinson,8/17/1954,1/13/1955,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,1,0,0
+80,John Harry Allen,9/7/1954,12/21/1954,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,0
+81,George Lester Belew,1/4/1955,1/24/1955,1950,arrested,white,male ,american,0,0,0,0,0,0,1,0,0,1,0
+82,Kenneth Darrell Carpenter,1/31/1955,2/4/1955,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+83,Flenoy Payne,2/2/1955,3/11/1958,1950,arrested,black,male ,american,0,1,0,1,1,0,0,0,0,0,0
+84,Palmer Julius Morset,2/7/1955,3/2/1956,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+85,Patrick Eugene McDermott,2/9/1955,7/19/1955,1950,arrested,white,male ,american,0,1,0,0,1,0,0,0,1,1,1
+86,Garland William Daniels,2/18/1955,3/29/1955,1950,arrested,white,male ,american,0,0,0,0,1,0,1,0,0,1,0
+87,Daniel William O’Connor,4/11/1955,12/26/1958,1950,arrested,white,male ,american,0,0,0,0,1,0,1,0,0,0,0
+88,Jack Harvey Raymond,8/8/1955,10/14/1955,1950,arrested,white,male ,american,0,0,0,0,0,0,1,0,0,1,0
+89,Daniel Abram Everhart,8/17/1955,10/9/1955,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,1
+90,Charles Edward Ranels,9/2/1955,12/16/1956,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+91,Thurman Arthur Green,10/24/1955,2/16/1956,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+92,John Allen Kendrick,11/2/1955,12/2/1955,1950,arrested,white,male ,american,0,1,0,1,1,0,0,0,0,1,1
+93,Joseph James Bagnola,12/19/1955,12/30/1956,1950,arrested,white,male ,american,0,1,0,0,1,0,0,0,1,0,0
+94,Nick George Montos,3/2/1956,3/28/1956,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,0
+95,James Ignatius Faherty,3/19/1956,5/16/1956,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,1,0,0
+96,Thomas Francis Richardson,4/12/1956,5/16/1956,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,1,0,0
+97,Eugene Francis Newman,5/28/1956,6/11/1965,1950,removed,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+98,Carmine DiBiase,5/28/1956,8/28/1958,1950,surrender,white,male ,american,0,1,0,1,1,0,0,0,1,0,0
+99,Ben Golden McCollum,1/4/1957,3/7/1958,1950,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,1,0
+100,Alfred James White,1/14/1957,1/24/1957,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+101,Robert L. Green,2/11/1957,2/13/1957,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+102,George Edward Cole,2/25/1957,7/6/1959,1950,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,0,1
+103,Eugene Russell McCracken,3/26/1958,3/27/1958,1950,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,1,1
+104,Frank Aubrey Leftwich,4/4/1958,4/18/1958,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,0
+105,Quay Cleon Kilburn,4/16/1958,6/2/1958,1950,arrested,white,male ,american,0,0,0,0,1,0,1,0,0,0,0
+106,Dominick Scialo,5/9/1958,7/27/1959,1950,surrender,white,male ,american,0,0,0,1,1,0,0,0,1,0,0
+107,Angelo Luigi Pero,6/16/1958,12/2/1960,1950,removed,white,male ,american,0,0,0,1,1,0,0,0,1,0,0
+108,Frederick Grant Dunn,7/29/1958,9/8/1959,1950,death,white,male ,american,0,0,0,1,1,0,0,0,0,1,1
+109,Frank Lawrence Sprenz,9/10/1958,4/15/1959,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,1
+110,David Lynn Thurston,1/8/1959,2/6/1959,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,1
+111,John Thomas Freeman,2/17/1959,2/18/1959,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+112,Edwin Sanford Garrison,3/4/1959,9/9/1960,1950,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,1,0
+113,Emmett Bernard Kervan,4/29/1959,5/13/1959,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+114,Richard Allen Hunt,5/27/1959,6/2/1959,1950,arrested,white,male ,american,0,0,0,1,1,0,1,0,0,0,1
+115,Walter Bernard O’Donnell,6/17/1959,6/19/1959,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+116,Billy Owens Williams,7/10/1959,3/4/1960,1950,arrested,black,male ,american,0,0,0,1,1,0,0,0,1,0,0
+117,James Francis Jenkins,7/21/1959,8/12/1959,1950,arrested,white,male ,american,0,0,0,0,1,0,1,0,0,1,0
+118,Harry Raymond Pope,8/11/1959,8/25/1959,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,1
+119,James Francis Duffy,8/26/1959,9/2/1959,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+120,Robert Garfield Brown Jr.,9/9/1959,1/11/1960,1950,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+121,Frederick Anthony Seno,9/24/1959,9/24/1959,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+122,Smith Gerald Hudson,10/7/1959,7/31/1960,1950,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,1,0
+123,Joseph Lloyd Thomas,10/21/1959,12/10/1959,1950,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+124,Kenneth Ray Lawson,1/4/1960,3/20/1960,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+125,Ted Jacob Rinehart,1/25/1960,3/6/1960,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+126,Charles Clyatt Rogers,3/18/1960,5/11/1960,1960,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,1,0
+127,Joseph Corbett Jr.,3/30/1960,10/29/1960,1960,arrested,white,male ,american,0,1,0,1,0,0,0,0,0,1,0
+128,William Mason,4/6/1960,4/27/1960,1960,arrested,white,male ,american,0,1,0,1,0,0,0,0,0,0,0
+129,Edward Reiley,5/10/1960,5/24/1960,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+130,Harold Eugene Fields,5/25/1960,9/5/1960,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+131,Richard Peter Wagner,6/23/1960,6/25/1960,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+132,James John Warjac,7/19/1960,7/22/1960,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+133,Ernest Tait,8/16/1960,9/10/1960,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+134,Clarence Leon Raby,8/19/1960,8/28/1960,1960,surrender,white,male ,american,0,1,0,0,1,0,0,0,0,0,1
+135,Nathaniel Beans,9/12/1960,9/30/1960,1960,arrested,black,male ,american,0,1,0,0,0,0,0,0,0,1,0
+136,Stanley William Fitzgerald,9/20/1960,9/22/1960,1960,arrested,white,male ,american,0,1,0,1,0,0,1,0,0,0,0
+137,Donald Leroy Payne,10/6/1960,11/26/1965,1960,removed,white,male ,american,1,0,1,0,0,0,0,0,0,0,0
+138,Charles Francis Higgins,10/10/1960,10/17/1960,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,1
+139,Robert William Schultz Jr.,10/12/1960,11/4/1960,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,1
+140,Merle Lyle Gall,10/17/1960,1/18/1961,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+141,James George Economou,10/31/1960,3/22/1961,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+142,Ray Delano Tate,11/18/1960,11/25/1960,1960,surrender,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+143,John B. Everhart,11/22/1960,11/6/1963,1960,arrested,black,male ,american,0,1,0,1,0,0,0,0,0,0,1
+144,Herbert Hoover Huffman,12/19/1960,12/29/1960,1960,arrested,white,male ,american,0,1,0,1,0,0,0,0,0,0,0
+145,Kenneth Eugene Cindle,12/23/1960,4/1/1961,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+146,Thomas Viola,1/17/1961,3/27/1961,1960,arrested,white,male ,american,0,1,0,0,0,0,0,0,1,1,0
+147,William Chester Cole,2/2/1961,2/6/1961,1960,surrender,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+148,Willie Hughes,3/15/1961,8/8/1961,1960,arrested,black,male ,american,0,1,0,1,1,0,0,0,0,0,0
+149,William Terry Nichols,4/6/1961,4/30/1962,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,1,0,0
+150,George Martin Bradley Jr.,4/10/1961,5/1/1961,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+151,Philip Alfred LaNormandin,4/17/1961,4/17/1961,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,1
+152,Kenneth Holleck Sharp,5/1/1961,7/3/1961,1960,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,0,0
+153,Anthony Vincent Fede,5/22/1961,10/28/1961,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+154,Richard Laurence Marquette,6/29/1961,6/30/1961,1960,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+155,Robert William Schuette,7/19/1961,8/2/1961,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,1,0,0
+156,Chester Anderson McGonigal,8/14/1961,8/17/1961,1960,arrested,white,male ,american,0,1,0,1,0,0,0,0,0,0,0
+157,Hugh Bion Morse,8/29/1961,10/13/1961,1960,arrested,white,male ,american,1,1,1,1,0,0,0,0,0,0,0
+158,John Gibson Dillon,9/1/1961,3/2/1964,1960,death,white,male ,american,0,0,0,1,1,0,0,0,0,0,1
+159,John Robert Sawyer,10/30/1961,11/3/1961,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+160,Edward Wayne Edwards,11/10/1961,1/20/1962,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+161,Franklin Eugene Alltop,11/22/1961,2/2/1962,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+162,Francis Laverne Brannan,12/27/1961,1/17/1962,1960,surrender,white,male ,american,0,1,0,0,1,0,0,0,0,0,0
+163,Delbert Henry Linaweaver,1/30/1962,2/5/1962,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+164,Watson Young Jr.,2/5/1962,2/12/1962,1960,arrested,white,male ,american,0,1,1,0,1,0,0,0,0,1,0
+165,Lyndal Ray Smith,2/14/1962,3/22/1962,1960,surrender,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+166,Harry Robert Grove Jr.,2/19/1962,1/26/1963,1960,arrested,white,male ,american,0,0,0,0,1,0,1,0,0,0,0
+167,Bobby Randell Wilcoxson,2/23/1962,11/10/1962,1960,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,0,1
+168,Albert Frederick Nussbaum,4/2/1962,11/4/1962,1960,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,0,1
+169,Thomas Welton Holland,5/11/1962,6/2/1962,1960,arrested,white,male ,american,1,0,1,0,1,0,0,0,0,0,0
+170,Edward Howard Maps,6/15/1962,12/1/1967,1960,removed,white,male ,american,1,1,0,0,0,0,0,0,0,0,0
+171,David Stanley Jacubanis,11/21/1962,11/29/1962,1960,arrested,white,male ,russian,0,0,0,0,1,0,0,0,0,0,0
+172,John Kinchloe DeJarnette,11/30/1962,12/3/1962,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+173,Michael Joseph O’Connor,12/13/1962,12/28/1962,1960,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+174,John Lee Taylor,12/14/1962,12/20/1962,1960,arrested,black,male ,american,0,0,1,1,1,0,0,0,0,0,0
+175,Harold Thomas O’Brien,1/4/1963,1/14/1963,1960,removed,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+176,Jerry Clarence Rush,1/14/1963,3/25/1965,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+177,Marshall Frank Chrisman,2/7/1963,5/21/1963,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+178,Howard Jay Barnard,4/12/1963,4/6/1964,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+179,Leroy Ambrosia Frazier,6/4/1963,9/12/1963,1960,arrested,black,male ,american,0,0,1,1,0,0,0,0,0,0,1
+180,Carl Close,9/25/1963,9/26/1963,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+181,Thomas Asbury Hadder,10/9/1963,1/13/1964,1960,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,1,1
+182,Alfred Oponowicz,11/27/1963,12/23/1964,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+183,Arthur William Couts,12/27/1963,1/30/1964,1960,arrested,white,male ,american,0,0,1,1,1,0,0,0,0,0,0
+184,Jesse James Gilbert,1/27/1964,2/26/1964,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,1
+185,Sammie Earl Ammons,2/10/1964,5/15/1964,1960,arrested,white,male ,american,0,1,0,0,0,0,1,0,0,0,0
+186,Frank B. Dumont,3/10/1964,4/27/1964,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+187,William Beverly Hughes,3/18/1964,4/11/1964,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+188,Quay Cleon Kilburn,3/23/1964,6/25/1964,1960,arrested,white,male ,american,0,0,0,0,1,0,1,0,0,0,0
+189,Joseph Francis Bryan Jr.,4/14/1964,4/28/1964,1960,arrested,white,male ,american,1,1,1,1,1,0,0,0,0,0,0
+190,John Robert Bailey,4/22/1964,5/4/1964,1960,arrested,white,male ,american,0,0,1,1,1,0,0,0,0,0,0
+191,George Zavada,5/6/1964,6/12/1964,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+192,George Patrick McLaughlin,5/8/1964,2/24/1965,1960,arrested,white,male ,american,0,1,0,0,0,0,0,0,1,0,0
+193,Chester Collins,5/14/1964,3/30/1967,1960,removed,black,male ,american,0,0,0,1,0,0,0,0,0,1,0
+194,Edward Newton Nivens,5/28/1964,6/2/1964,1960,arrested,white,male ,american,0,0,0,1,1,0,1,0,0,0,0
+195,Louis Frederick Vasselli,6/15/1964,9/1/1964,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+196,Thomas Edward Galloway,6/24/1964,7/17/1964,1960,arrested,white,male ,american,0,1,0,1,0,0,0,0,1,0,0
+197,Alson Thomas Wahrlich,7/9/1964,10/28/1967,1960,arrested,white,male ,american,1,0,1,1,0,0,0,0,0,0,0
+198,Kenneth Malcolm Christiansen,7/27/1964,9/8/1964,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,1
+199,William Hutton Coble,9/11/1964,3/1/1965,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+200,Lloyd Donald Greeson Jr.,9/18/1964,9/23/1964,1960,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+201,Raymond Lawrence Wyngaard,10/5/1964,11/28/1964,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,0
+202,Norman Belyea Gorham,12/10/1964,5/28/1965,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+203,John William Clouser,1/7/1965,8/1/1972,1960,removed,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+204,Walter Lee Parman,1/15/1965,1/31/1965,1960,arrested,white,male ,filipino,0,1,0,0,0,0,0,0,0,0,0
+205,Gene Thomas Webb,2/11/1965,2/12/1965,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+206,Samuel Jefferson Veney,2/25/1965,3/11/1965,1960,arrested,black,male ,american,0,1,0,0,0,0,0,0,0,0,1
+207,Earl Veney,3/5/1965,3/11/1965,1960,arrested,black,male ,american,0,1,0,1,1,0,0,0,0,0,1
+208,Donald Stewart Heien,3/11/1965,2/3/1966,1960,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,1,0
+209,Arthur Pierce Jr.,3/24/1965,3/25/1965,1960,arrested,white,male ,american,1,1,1,1,1,0,0,0,0,0,0
+210,Donald Dean Rainey,3/26/1965,6/22/1965,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+211,Leslie Douglas Ashley,4/6/1965,4/23/1965,1960,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,1,0
+212,Charles Bryan Harris,5/6/1965,6/17/1965,1960,arrested,white,male ,american,0,1,0,0,0,0,0,0,1,0,0
+213,William Albert Autur Tahl,6/10/1965,11/5/1965,1960,arrested,white,male ,american,0,1,0,1,1,0,0,0,0,0,0
+214,Duane Earl Pope,6/11/1965,6/11/1965,1960,surrender,white,male ,american,0,1,0,0,1,0,0,0,0,0,0
+215,Allen Wade Haugsted,6/24/1965,12/23/1965,1960,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+216,Theodore Matthew Brechtel,6/30/1965,8/16/1965,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+217,Robert Allen Woodford,7/2/1965,8/5/1965,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+218,Warren Cleveland Osborne,8/12/1965,9/9/1965,1960,killed,white,male ,american,0,1,0,1,0,0,0,0,0,0,0
+219,Holice Paul Black,8/25/1965,12/15/1965,1960,arrested,black,male ,american,0,1,0,0,1,0,0,0,0,0,1
+220,Edward Owen Watkins,9/21/1965,12/2/1966,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+221,Joel Singer,11/19/1965,12/1/1965,1960,arrested,white,male ,canadian,0,0,0,0,1,0,0,0,0,0,0
+222,James Edward Kennedy,12/8/1965,12/23/1965,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+223,Lawrence John Higgins,12/14/1965,1/3/1966,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,1
+224,Hoyt Bud Cobb,1/6/1966,6/6/1966,1960,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+225,James Robert Bishop,1/10/1966,1/21/1966,1960,arrested,white,male ,american,0,0,0,0,1,0,1,0,0,0,0
+226,Robert Van Lewing,1/12/1966,2/6/1967,1960,arrested,white,male ,american,0,0,0,1,1,0,1,0,0,0,0
+227,Earl Ellery Wright,1/14/1966,6/20/1966,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+228,Jessie James Roberts Jr.,2/3/1966,2/8/1966,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+229,Charles Lorin Gove,2/16/1966,2/16/1966,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+230,Ralph Dwayne Owen,2/16/1966,3/11/1966,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+231,Jimmy Lewis Parker,2/25/1966,3/4/1966,1960,arrested,white,male ,american,0,1,0,1,0,0,0,0,0,1,0
+232,Jack Daniel Sayadoff,3/17/1966,3/24/1966,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+233,Robert Clayton Buick,3/24/1966,3/29/1966,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+234,James Vernon Taylor,4/4/1966,4/4/1966,1960,death,black,male ,american,0,1,0,0,0,0,0,0,0,0,0
+235,Lynwood Irwin Mears,4/11/1966,5/2/1967,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+236,James Robert Ringrose,4/15/1966,3/29/1967,1960,arrested,white,male ,american,0,0,0,0,0,0,1,0,0,0,0
+237,Walter Leonard Lesczynski,6/16/1966,9/9/1966,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+238,Donald Rogers Smelley,6/30/1966,11/7/1966,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+239,George Ben Edmondson,9/21/1966,6/28/1967,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+240,Everett Leroy Biggs,11/21/1966,12/1/1966,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+241,Gene Robert Jennings,12/15/1966,2/14/1967,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,0
+242,Clarence Wilbert McFarland,12/22/1966,4/4/1967,1960,arrested,black,male ,american,0,0,0,0,1,0,0,0,0,0,0
+243,Monroe Hickson,2/17/1967,1/30/1968,1960,death,black,male ,american,0,1,0,1,0,0,0,0,0,1,0
+244,Clyde Edward Laws,2/28/1967,5/18/1967,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,1
+245,Charles Edward Ervin,4/13/1967,7/25/1967,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,0
+246,Gordon Dale Ervin,4/13/1967,6/7/1969,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,0
+247,Thomas Franklin Dorman,4/20/1967,5/20/1967,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+248,Jerry Lynn Young,5/12/1967,6/15/1967,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,0
+249,Joseph Leroy Newman,6/2/1967,6/29/1967,1960,arrested,black,male ,american,0,0,0,0,1,0,0,0,0,0,0
+250,Carmen Raymond Gagliardi,6/9/1967,12/23/1968,1960,arrested,white,male ,american,0,1,0,0,0,0,0,0,1,0,0
+251,Donald Richard Bussmeyer,6/28/1967,8/24/1967,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+252,Florencio Lopez Mationg,7/1/1967,7/16/1967,1960,arrested,hispanic,male ,american,0,1,0,0,1,0,0,0,1,0,1
+253,Victor Jerald Bono,7/1/1967,7/16/1967,1960,arrested,white,male ,american,0,1,0,0,1,0,0,0,1,0,1
+254,Alfred Johnson Cooper Jr.,7/27/1967,9/8/1967,1960,arrested,black,male ,american,0,0,0,1,1,0,0,0,0,0,1
+255,John D. Slaton,8/2/1967,12/1/1967,1960,arrested,white,male ,american,0,0,0,1,0,0,1,0,0,0,1
+256,Jerry Ray James,8/16/1967,1/24/1968,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+257,Richard Paul Anderson,9/7/1967,1/19/1968,1960,arrested,white,male ,american,0,1,0,1,1,0,0,0,0,0,0
+258,Henry Theodore Young,9/21/1967,1/9/1968,1960,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,1,0
+259,Donald Eugene Sparks,11/13/1967,1/24/1968,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+260,Zelma Lavone King,12/14/1967,1/30/1968,1960,arrested,black,male ,american,0,1,0,0,0,0,0,0,0,0,0
+261,Jerry Reece Peacock,12/14/1967,3/5/1968,1960,arrested,white,male ,american,0,1,0,1,1,0,0,0,0,1,0
+262,Ronald Eugene Storck,1/19/1968,2/29/1968,1960,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,0,0
+263,Robert Leon McCain,1/31/1968,2/23/1968,1960,arrested,white,male ,american,0,1,0,0,1,0,0,0,1,0,0
+264,William Garrin Allen II,2/9/1968,3/23/1968,1960,arrested,black,male ,american,0,1,0,0,0,0,0,0,0,0,0
+265,Charles Lee Herron,2/9/1968,6/18/1986,1960,arrested,black,male ,american,0,1,0,0,1,0,1,0,0,0,0
+266,Leonard Daniel Spears,2/13/1968,3/2/1968,1960,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,0,1
+267,William Howard Bornman,2/13/1968,2/13/1968,1960,arrested,white,male ,american,0,1,0,1,1,0,0,0,0,0,0
+268,John Conway Patterson,2/26/1968,3/17/1968,1960,arrested,black,male ,american,0,1,0,0,1,0,0,0,0,0,1
+269,Troy Denver Martin,3/9/1968,3/19/1968,1960,arrested,white,male ,american,0,1,0,1,0,0,0,0,0,0,0
+270,George Benjamin Williams,3/18/1968,5/26/1968,1960,death,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+271,Michael John Sanders,3/21/1968,4/8/1968,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,1
+272,Howard Callens Johnson,3/21/1968,4/24/1968,1960,arrested,black,male ,american,0,1,0,0,1,0,0,0,0,0,0
+273,George Edward Wells,3/28/1968,5/27/1969,1960,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,0,0
+274,David Evans,4/3/1968,4/26/1968,1960,arrested,black,male ,american,0,0,0,0,1,0,0,0,0,0,0
+275,Franklin Allen Paris,4/9/1968,5/21/1968,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+276,David Stuart Neff,4/18/1968,4/25/1968,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+277,James Earl Ray,4/20/1968,6/8/1968,1960,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,1,0
+278,John Wesley Shannon Jr.,5/7/1968,6/5/1968,1960,arrested,black,male ,american,0,0,1,0,1,0,0,0,0,0,0
+279,Taylor Morris Teaford,5/10/1968,5/24/1972,1960,removed,white,male ,american,1,1,1,0,0,0,0,0,0,0,0
+280,Phillip Morris Jones,6/5/1968,6/26/1968,1960,surrender,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+281,George Michael Gentile,6/18/1968,12/17/1968,1960,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,0,0
+282,Johnny Ray Smith,6/20/1968,6/24/1968,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,1
+283,Byron James Rice,7/5/1968,10/2/1972,1960,surrender,white,male ,american,0,1,0,0,1,0,0,0,0,0,1
+284,Robert Leroy Lindblad,7/11/1968,10/7/1968,1960,surrender,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+285,James Joseph Scully,7/15/1968,7/23/1968,1960,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+286,Billy Ray White,8/13/1968,8/17/1968,1960,arrested,white,male ,american,0,1,0,1,1,0,0,0,0,0,0
+287,Frederick Rudolph Yokom,8/29/1968,9/6/1968,1960,arrested,white,male ,american,0,1,0,0,1,0,0,0,1,0,0
+288,Harold James Evans,9/19/1968,1/2/1969,1960,arrested,white,male ,american,0,0,1,1,1,0,0,0,0,1,0
+289,Robert Lee Carr,10/18/1968,11/4/1968,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+290,Levi Washington,11/15/1968,12/5/1968,1960,arrested,black,male ,american,0,0,0,0,1,0,0,0,0,1,0
+291,Richard Lee Tingler Jr.,12/20/1968,5/19/1969,1960,arrested,white,male ,american,0,1,0,1,1,0,0,0,0,0,0
+292,Gary Steven Krist,12/20/1968,12/22/1968,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+293,Ruth Eisemann-Schier,12/28/1968,3/5/1969,1960,arrested,white,female,honduran,0,0,0,1,0,0,0,0,0,0,0
+294,Baltazar Garcia Estolas,1/3/1969,9/3/1969,1960,arrested,asian,male ,filipino,0,1,0,1,0,0,0,0,0,0,0
+295,Billie Austin Bryant,1/8/1969,1/8/1969,1960,arrested,black,male ,american,0,1,0,0,0,0,0,0,0,0,1
+296,Billy Len Schales,1/27/1969,1/30/1969,1960,arrested,white,male ,american,1,0,1,1,0,0,0,0,0,0,0
+297,Thomas James Lucas,2/13/1969,2/26/1969,1960,arrested,black,male ,american,0,0,0,0,1,0,0,0,0,0,0
+298,Warren David Reddock,3/11/1969,4/14/1971,1960,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+299,George Edward Blue,3/20/1969,3/28/1969,1960,arrested,black,male ,american,0,0,0,0,1,0,0,0,0,0,0
+300,Cameron David Bishop,4/15/1969,3/12/1975,1960,arrested,white,male ,american,0,0,0,0,0,0,0,0,0,0,0
+301,Marie Dean Arrington,5/29/1969,12/22/1971,1960,arrested,black,female,american,0,1,0,0,0,0,0,0,0,1,0
+302,Benjamin Hoskins Paddock,6/10/1969,5/5/1977,1960,removed,white,male ,american,0,0,0,0,1,0,1,0,0,0,0
+303,Francis Leroy Hohimer,6/20/1969,12/20/1969,1960,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+304,Joseph Lloyd Thomas,9/12/1969,3/8/1970,1960,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+305,James John Byrnes,1/6/1970,4/17/1970,1970,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,1
+306,Edmund James Devlin,3/20/1970,8/15/1970,1970,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+307,Lawrence Robert Plamondon,5/5/1970,7/23/1970,1970,arrested,white,male ,american,0,0,0,0,1,1,0,0,0,0,1
+308,Hubert Geroid Brown,5/6/1970,10/16/1971,1970,arrested,black,male ,american,0,0,0,0,1,1,0,0,0,0,0
+309,Angela Yvonne Davis,8/18/70,10/13/70,1970,arrested,black,female,american,0,0,0,0,0,1,0,0,0,0,0
+310,Dwight Alan Armstrong,9/4/1970,4/1/1976,1970,removed,white,male ,american,0,1,0,0,1,1,0,0,0,0,0
+311,Karleton Lewis Armstrong,9/4/1970,2/17/1972,1970,arrested,white,male ,american,0,1,0,0,1,1,0,0,0,0,0
+312,David Sylvan Fine,9/4/1970,1/8/1976,1970,arrested,white,male ,american,0,1,0,0,1,1,0,0,0,0,0
+313,Leo Frederick Burt,9/4/1970,4/7/1976,1970,removed,white,male ,american,0,1,0,0,1,1,0,0,0,0,0
+314,Bernardine Rae Dohrn,10/14/1970,12/7/1973,1970,removed,white,female,american,0,0,0,0,1,1,0,0,1,0,0
+315,Katherine Ann Power,10/17/1970,6/15/1984,1970,removed,white,female,american,0,1,0,0,1,0,0,0,0,0,1
+316,Susan Edith Saxe,10/17/1970,3/27/1975,1970,arrested,white,female,american,0,1,0,0,1,0,0,0,0,0,1
+317,Mace Brown,10/20/1972,4/18/1973,1970,killed,black,male ,american,0,1,0,0,1,0,0,0,0,0,0
+318,Herman Bell,5/9/1973,9/2/1973,1970,arrested,black,male ,american,0,1,0,0,0,1,0,0,0,0,1
+319,Twymon Ford Myers,9/28/1973,11/14/1973,1970,killed,black,male ,american,0,1,0,0,0,1,0,0,0,0,1
+320,Ronald Harvey,12/7/1973,3/27/1974,1970,arrested,black,male ,american,0,1,0,1,0,0,0,0,1,0,0
+321,Samuel Richard Christian,12/7/1973,12/11/1973,1970,arrested,black,male ,american,0,1,0,0,0,0,0,0,1,0,0
+322,Rudolph Alonza Turner,1/10/1974,10/1/1974,1970,arrested,black,male ,american,0,1,0,1,0,0,0,0,0,0,1
+323,Larry Gene Cole,4/2/1974,4/3/1974,1970,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+324,James Ellsworth Jones,4/16/1974,6/15/1974,1970,arrested,white,male ,american,0,0,0,1,0,0,0,0,0,0,0
+325,Lendell Hunter,6/27/1974,7/31/1974,1970,arrested,black,male ,american,0,1,1,1,0,0,0,0,0,1,0
+326,John Edward Copeland Jr.,8/15/1974,7/23/1975,1970,arrested,black,male ,american,0,0,1,1,1,0,0,0,0,0,0
+327,Melvin Dale Walker,10/16/1974,11/9/1974,1970,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+328,Thomas Otis Knight,12/12/1974,12/31/1974,1970,arrested,black,male ,american,0,0,0,1,1,0,0,0,0,1,0
+329,Billy Dean Anderson,1/21/1975,7/7/1979,1970,arrested,white,male ,american,0,0,0,1,0,0,0,0,0,1,1
+330,Robert Gerald Davis,4/4/1975,8/5/1977,1970,arrested,white,male ,american,0,1,0,1,1,0,0,0,0,0,1
+331,Richard Dean Holtan,4/18/1975,7/12/1975,1970,surrender,white,male ,american,0,1,0,1,1,0,0,0,0,0,0
+332,Richard Bernard Lindhorst Jr.,8/4/1975,8/7/1975,1970,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+333,William Lewis Herron Jr.,8/15/1975,10/30/1975,1970,arrested,white,male ,american,0,1,0,1,0,0,0,0,0,1,0
+334,James Winston Smallwood,8/29/1975,12/5/1975,1970,arrested,black,male ,american,0,0,0,1,1,0,0,0,0,1,1
+335,Leonard Peltier,12/22/1975,2/6/1976,1970,arrested,indian ,male ,american,0,1,0,0,0,1,0,0,0,0,1
+336,Patrick James Huston,3/3/1976,12/7/1977,1970,arrested,white,male ,american,0,0,0,0,1,1,0,0,0,1,0
+337,Thomas Edward Bethea,3/5/1976,5/4/1976,1970,arrested,black,male ,american,0,0,0,1,0,0,0,0,0,0,0
+338,Anthony Michael Juliano,3/15/1976,3/22/1976,1970,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+339,Joseph Maurice McDonald,4/1/1976,9/15/1982,1970,arrested,white,male ,american,0,1,0,0,1,0,0,0,1,0,0
+340,James Ray Renton,4/7/1976,5/9/1977,1970,arrested,white,male ,american,0,0,0,0,0,0,1,0,0,0,0
+341,Nathaniel Doyle Jr.,4/29/1976,7/15/1976,1970,killed,black,male ,american,0,0,0,1,1,0,0,0,0,0,0
+342,Morris Lynn Johnson,5/25/1976,6/26/1976,1970,arrested,white,male ,american,0,0,0,1,1,0,0,0,1,1,1
+343,Richard Joseph Picariello,7/29/1976,10/21/1976,1970,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+344,Edward Patrick Gullion Jr.,8/13/1976,10/22/1976,1970,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+345,Gerhardt Julius Schwartz,11/18/1976,11/22/1976,1970,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+346,Francis John Martin,12/17/1976,2/17/1977,1970,arrested,white,male ,american,0,0,1,1,0,0,0,0,0,1,0
+347,Benjamin George Pavan,1/12/1977,2/17/1977,1970,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+348,Larry Gene Campbell,3/18/1977,9/6/1977,1970,arrested,black,male ,american,0,1,1,1,0,0,0,0,0,1,0
+349,Roy Ellsworth Smith,3/18/1977,6/2/1977,1970,suicide,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+350,Raymond Luc Levasseur,5/5/1977,11/4/1984,1970,arrested,white,male ,american,0,0,0,1,1,1,0,0,0,0,0
+351,James Earl Ray,6/11/1977,6/13/1977,1970,arrested,white,male ,american,0,1,0,1,1,1,0,0,0,1,0
+352,Willie Foster Sellers,6/14/1977,6/20/1979,1970,arrested,white,male ,american,0,0,0,0,1,0,0,0,1,0,0
+353,Larry Smith,7/15/1977,8/20/1977,1970,arrested,black,male ,american,0,1,0,0,1,0,0,0,0,0,0
+354,Ralph Robert Cozzolino,10/19/1977,1/6/1978,1970,arrested,white,male ,american,0,1,0,1,1,0,0,0,0,1,1
+355,Millard Oscar Hubbard,10/19/1977,10/21/1977,1970,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+356,Carlos Alberto Torres,10/19/1977,4/4/1980,1970,arrested,hispanic,male ,american,0,1,0,1,1,1,0,0,0,0,0
+357,Enrique Estrada,12/5/1977,12/8/1977,1970,arrested,hispanic,male ,american,0,1,0,0,1,0,0,0,0,0,0
+358,William David Smith,2/10/1978,10/27/1978,1970,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,0,0
+359,Gary Ronald Warren,2/10/1978,5/12/1978,1970,arrested,white,male ,american,0,0,1,0,1,0,0,0,0,1,0
+360,Theodore Robert Bundy,2/10/1978,2/15/1978,1970,arrested,white,male ,american,0,1,1,1,0,0,0,0,0,1,0
+361,Andrew Evan Gipson,3/27/1978,5/24/1978,1970,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,1
+362,Anthony Dominic Liberatore,5/26/1978,4/1/1979,1970,arrested,white,male ,american,0,1,0,0,1,0,0,0,1,0,0
+363,Michael George Thevis,7/10/1978,11/9/1978,1970,arrested,white,male ,american,0,1,0,1,1,0,1,0,1,0,0
+364,Charles Everett Hughes,11/19/1978,4/29/1981,1970,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,0,0
+365,Ronald Lee Lyons,12/17/1978,9/10/1979,1970,arrested,white,male ,american,0,0,0,1,0,0,0,0,0,1,0
+366,Leo Joseph Koury,4/20/1979,6/16/1991,1970,death,white,male ,american,0,1,0,1,1,0,0,0,1,0,0
+367,John William Sherman,8/3/1979,12/17/1981,1970,arrested,white,male ,american,0,0,0,0,1,1,0,0,0,0,1
+368,Melvin Bay Guyon,8/10/1979,8/16/1979,1970,surrender,black,male ,american,0,1,0,0,0,0,0,0,0,0,1
+369,George Alvin Bruton,9/28/1979,12/14/1979,1970,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,0,0
+370,Earl Edwin Austin,10/12/1979,3/1/1980,1970,arrested,white,male ,american,0,0,0,1,1,0,1,0,0,1,0
+371,Vincent James Russo,12/24/1979,1/4/1985,1970,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+372,Albert Victory,3/14/1980,2/24/1981,1980,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,1,1
+373,Ronald Turney Williams,4/16/1980,6/8/1981,1980,arrested,white,male ,american,0,1,0,1,1,0,0,0,0,1,1
+374,Daniel Jay Barney,3/10/1981,4/19/1981,1980,suicide,white,male ,american,0,0,1,0,1,0,0,0,0,1,0
+375,Donald Eugene Webb,5/4/1981,3/31/2007,1980,removed,white,male ,american,0,1,0,0,1,0,0,0,1,0,1
+376,Gilbert James Everett,5/13/1981,8/12/1985,1980,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+377,Leslie Nichols,7/2/1981,12/17/1981,1980,arrested,black,male ,american,0,1,0,0,1,0,0,0,0,0,0
+378,Thomas William Manning,1/29/1982,4/24/1985,1980,arrested,white,male ,american,0,1,0,0,1,1,0,0,0,0,1
+379,David Fountain Kimberly Jr.,1/29/1982,7/8/1982,1980,arrested,white,male ,american,0,0,0,1,0,0,0,0,0,0,1
+380,Mutulu Shakur,7/23/1982,2/12/1986,1980,arrested,black,male ,american,0,1,0,0,1,1,0,0,0,0,1
+381,Charles Edward Watson,10/22/1982,10/25/1983,1980,arrested,white,male ,american,0,1,1,0,0,0,0,0,0,0,1
+382,Laney Gibson Jr.,11/16/1983,12/18/1983,1980,arrested,white,male ,american,0,1,1,0,0,0,0,0,0,1,0
+383,George Clarence Bridgette,1/10/1984,1/30/1984,1980,arrested,black,male ,american,0,1,0,1,0,0,0,0,0,0,0
+384,Samuel Marks Humphrey,2/29/1984,3/22/1984,1980,arrested,black,male ,american,0,1,0,0,1,0,0,0,0,0,0
+385,Christopher Bernard Wilder,4/5/1984,4/13/1984,1980,killed,white,male ,australian,0,1,1,0,0,0,0,0,0,0,0
+386,Victor Manuel Gerena,5/14/1984,12/15/2016,1980,removed,hispanic,male ,american,0,0,0,1,1,0,0,0,0,0,0
+387,Wai-Chiu Ng,6/15/1984,10/4/1984,1980,arrested,asian,male ,british,0,1,0,0,1,0,0,0,0,0,0
+388,Alton Coleman,7/11/1984,7/20/1984,1980,arrested,black,male ,american,0,1,1,1,1,0,0,0,0,0,0
+389,Cleveland McKinley Davis,10/24/1984,1/25/1985,1980,arrested,black,male ,american,0,1,0,0,0,1,0,0,0,0,1
+390,Carmine John Persico,1/31/1985,2/15/1985,1980,arrested,white,male ,american,0,0,0,0,1,1,1,0,1,0,0
+391,Lohman Ray Mays Jr.,2/15/1985,9/23/1985,1980,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+392,Charles Earl Hammond,3/14/1985,8/4/1986,1980,removed,white,male ,american,0,1,0,1,0,0,0,0,0,0,0
+393,Michael Frederic Allen Hammond,3/14/1985,8/4/1986,1980,removed,white,male ,american,1,1,0,1,0,0,0,0,0,0,0
+394,Robert Henry Nicolaus,6/28/1985,7/20/1985,1980,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+395,David Jay Sterling,9/30/1985,2/13/1986,1980,arrested,white,male ,american,0,0,1,1,0,0,0,0,0,1,0
+396,Richard Joseph Scutari,9/30/1985,3/19/1986,1980,arrested,white,male ,american,0,1,0,0,1,1,0,0,0,0,0
+397,Joseph William Dougherty,11/6/1985,12/19/1986,1980,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,0,0
+398,Brian Patrick Malverty,3/28/1986,4/7/1986,1980,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+399,Billy Ray Waldon,5/16/1986,6/16/1986,1980,arrested,white,male ,american,0,1,1,1,1,0,0,0,0,0,0
+400,Claude Lafayette Dallas Jr.,5/16/1986,3/8/1987,1980,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,0,1
+401,Donald Keith Williams,7/18/1986,8/20/1986,1980,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+402,Terry Lee Conner,8/8/1986,12/9/1986,1980,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,1
+403,Fillmore Raymond Cross Jr.,8/8/1986,12/23/1986,1980,surrender,white,male ,american,0,0,0,1,1,0,0,0,1,0,0
+404,James Wesley Dyess,9/29/1986,3/16/1988,1980,arrested,black,male ,american,0,1,0,0,1,0,0,0,0,1,0
+405,Danny Michael Weeks,9/29/1986,3/20/1988,1980,arrested,white,male ,american,0,1,0,1,1,0,0,0,0,1,0
+406,Mike Wayne Jackson,10/1/1986,10/2/1986,1980,suicide,white,male ,american,0,1,0,1,1,0,0,0,0,0,1
+407,Thomas George Harrelson,11/28/1986,2/19/1987,1980,arrested,white,male ,american,0,0,0,0,1,1,0,0,0,0,0
+408,Robert Alan Litchfield,1/20/1987,5/20/1987,1980,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+409,David James Roberts,4/27/1987,2/11/1988,1980,arrested,black,male ,american,0,1,0,0,1,0,0,0,0,0,0
+410,Ronald Glyn Triplett,4/27/1987,5/16/1987,1980,arrested,white,male ,american,0,0,0,1,1,0,0,0,0,1,0
+411,Claude Daniel Marks,5/22/1987,12/6/1994,1980,surrender,white,male ,american,0,0,0,1,1,1,0,0,0,0,0
+412,Donna Jean Willmott,5/22/1987,12/6/1994,1980,surrender,white,female,american,0,0,0,1,1,1,0,0,0,0,0
+413,Darren Dee O’Neall,6/25/1987,10/25/1987,1980,arrested,white,male ,american,0,1,1,0,0,0,0,0,0,0,0
+414,Louis Ray Beam Jr.,7/14/1987,11/6/1987,1980,arrested,white,male ,american,0,0,0,0,0,1,0,0,0,0,0
+415,Ted Jeffery Otsuki,1/20/1988,9/4/1988,1980,arrested,asian,male ,american,0,1,0,0,1,0,0,0,0,0,1
+416,Pedro Luis Estrada,4/15/1988,10/1/1989,1980,arrested,hispanic,male ,american,0,1,0,0,0,0,0,0,1,0,0
+417,John Edward Stevens,5/29/1988,11/30/1988,1980,arrested,white,male ,american,0,0,0,0,1,0,0,0,0,0,0
+418,Jack Darrell Farmer,5/29/1988,6/1/1988,1980,arrested,white,male ,american,0,0,0,0,0,0,0,0,1,0,0
+419,Roger Lee Jones,5/29/1988,3/4/1989,1980,arrested,white,male ,american,1,0,1,0,0,0,0,0,0,0,0
+420,Terry Lee Johnson,6/12/1988,8/17/1988,1980,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,1,0
+421,Stanley Faison,11/27/1988,12/24/1988,1980,arrested,black,male ,american,0,1,0,0,0,0,0,0,0,0,0
+422,Steven Ray Stout,11/27/1988,12/6/1988,1980,arrested,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+423,Armando Garcia,1/8/1989,1/18/1994,1980,arrested,hispanic,male ,cuban,0,0,0,1,1,0,0,0,1,0,0
+424,Melvin Edward Mays,2/7/1989,3/9/1995,1980,arrested,black,male ,american,0,0,0,1,1,0,0,0,1,0,0
+425,Bobby Gene Dennie,2/24/1989,10/28/1989,1980,arrested,white,male ,american,0,1,1,1,1,0,0,0,0,1,0
+426,Costabile “Gus” Farace,3/17/1989,11/17/1989,1980,death,white,male ,american,0,1,0,0,0,0,0,0,0,0,1
+427,Arthur Lee Washington Jr.,10/18/1989,12/27/2000,1980,removed,black,male ,american,0,0,0,1,0,1,0,0,0,0,1
+428,Lee Nell Carter,11/19/1989,11/20/1989,1980,arrested,black,male ,american,0,1,0,1,0,0,0,0,0,0,0
+429,Wardell David Ford,12/20/1989,9/17/1990,1980,arrested,black,male ,american,0,1,0,0,1,0,1,0,0,0,1
+430,Leslie Isben Rogge,1/24/1990,5/19/1996,1990,surrender,white,male ,american,0,0,0,0,1,0,0,0,0,1,0
+431,Kenneth Robert Stanton,10/24/1990,10/31/1990,1990,arrested,white,male ,american,1,0,1,0,0,0,0,0,0,0,0
+432,Patrick Michael Mitchell,11/23/1990,2/22/1994,1990,arrested,white,male ,canadian,0,0,0,0,1,0,0,0,1,0,0
+433,Jon Preston Settle,8/9/1991,8/6/1991,1990,arrested,hispanic,male ,american,0,1,0,0,0,0,0,0,0,0,0
+434,Robert Michael Allen,9/13/1991,12/23/1992,1990,death,white,male ,american,0,1,0,1,0,0,0,0,0,0,0
+435,Mir Aimal Kansi,2/9/1993,6/17/1997,1990,arrested,asian,male ,pakistani,0,1,0,1,0,0,0,0,0,0,1
+436,Ramzi Ahmed Yousef,4/21/1993,2/7/1995,1990,arrested,asian,male ,pakistani,0,1,0,1,1,0,0,1,0,0,0
+437,Joseph Martin Luther Gardner,5/25/1994,10/19/1994,1990,arrested,black,male ,american,0,1,1,1,0,0,0,0,0,0,0
+438,Gary Ray Bowles,11/19/1994,11/22/1994,1990,arrested,white,male ,american,0,1,1,0,1,0,0,0,0,0,0
+439,Gerald Keith Watkins,3/4/1995,5/5/1995,1990,arrested,black,male ,american,0,1,0,0,0,0,0,0,0,0,0
+440,Juan Garcia-Abrego,3/9/1995,1/15/1996,1990,arrested,hispanic,male ,mexican,0,0,0,0,1,0,0,0,1,0,0
+441,Abdel Bassett Ali Al-Megrahi,3/23/1995,4/5/1999,1990,arrested,white,male ,libyan,0,1,0,0,1,0,0,1,0,0,0
+442,Lamen Khalifa Fhimah,3/23/1995,4/5/1999,1990,arrested,white,male ,libyan,0,1,0,0,1,0,0,1,0,0,0
+443,O’Neil Vassell,7/15/1995,10/16/1996,1990,arrested,black,male ,american,0,1,0,0,0,0,0,0,1,0,0
+444,Rickey Allen Bright,12/15/1995,1/7/1996,1990,arrested,white,male ,american,1,0,1,1,0,0,0,0,0,0,0
+445,Agustin Vasquez-Mendoza,8/3/1996,7/9/2000,1990,arrested,hispanic,male ,mexican,0,1,0,0,0,0,0,0,1,0,1
+446,Thang Thanh Nguyen,8/3/1996,1/6/1998,1990,arrested,asian,male ,vietnamese,0,1,0,1,1,0,0,0,0,0,0
+447,Glen Stewart Godwin,12/7/1996,5/19/2016,1990,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,1,0
+448,David Alex Alvarez,12/14/1996,5/20/1997,1990,arrested,hispanic,male ,american,0,1,0,0,0,0,0,0,0,0,0
+449,Andrew Phillip Cunanan,6/12/1997,7/24/1997,1990,death,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
+450,Paul Ragusa,9/6/1997,1/30/1998,1990,surrender,white,male ,american,0,0,0,1,1,0,0,0,1,0,0
+451,Ramon Eduardo Arellano-Felix,9/24/1997,3/25/2002,1990,killed,hispanic,male ,mexican,0,0,0,0,1,0,0,0,1,0,0
+452,Tony Ray Amati,2/21/1998,2/27/1998,1990,arrested,white,male ,american,0,1,0,1,0,0,0,0,0,0,0
+453,Harry Joseph Bowman,3/14/1998,6/7/1999,1990,arrested,white,male ,american,0,1,0,0,1,0,0,0,1,0,0
+454,Eric Robert Rudolph,5/5/1998,5/31/2003,1990,arrested,white,male ,american,0,1,0,0,1,1,0,0,0,0,0
+455,James Charles Kopp,6/7/1999,3/29/2001,1990,arrested,white,male ,american,0,1,0,0,0,1,0,1,0,0,0
+456,Usama Bin Laden,6/7/1999,5/1/2011,1990,killed,white,male ,saudi arabian,0,1,0,0,1,1,0,1,0,0,0
+457,Rafael Resendez-Ramirez,6/21/1999,7/13/1999,1990,arrested,hispanic,male ,mexican,0,1,1,0,0,0,0,0,0,0,0
+458,James J. Bulger,8/19/1999,6/22/2011,1990,arrested,white,male ,american,0,1,0,1,1,0,0,0,1,0,0
+459,Jesse James Caston,8/19/2000,12/20/2000,2000,arrested,white,male ,american,0,1,0,1,0,0,0,0,0,0,1
+460,Eric Franklin Rosser,12/27/2000,8/21/2001,2000,arrested,white,male ,american,1,0,0,0,0,0,0,0,0,0,0
+461,Aurlieas Dame McClarty,2/24/2001,2/14/2001,2000,arrested,black,male ,american,0,1,0,0,1,0,0,0,0,0,0
+462,Hopeton Eric Brown,3/17/2001,3/23/2004,2000,killed,black,male ,jamaican,0,1,0,1,0,0,0,0,0,0,0
+463,Maghfoor Mansoor,5/23/2001,5/11/2001,2000,death,asian,male ,pakistani,0,1,1,0,1,0,0,0,0,0,0
+464,Francis William Murphy,6/6/2001,5/20/2001,2000,arrested,black,male ,american,0,0,0,0,1,0,0,0,0,0,0
+465,Dwight Bowen,8/30/2001,8/22/2001,2000,arrested,black,male ,american,0,1,0,1,0,0,0,0,0,0,0
+466,Nikolay Soltys,8/23/2001,8/30/2001,2000,arrested,white,male ,ukrainian,0,1,0,0,0,0,0,0,0,0,0
+467,Clayton Lee Waagner,9/21/2001,12/5/2001,2000,arrested,white,male ,american,0,0,0,0,1,1,0,1,0,1,0
+468,Felix Summers,10/30/2001,12/13/2001,2000,arrested,black,male ,american,0,1,0,0,0,0,0,0,0,0,0
+469,Christian Michael Longo,1/11/2002,1/13/2002,2000,arrested,white,male ,american,1,1,0,0,0,0,0,0,0,0,0
+470,Michael Scott Bliss,1/31/2002,4/23/2002,2000,arrested,white,male ,american,1,0,0,1,0,0,0,0,0,0,0
+471,James Spencer Springette,4/25/2002,11/5/2002,2000,arrested,black,male ,american,0,0,0,1,1,0,0,0,1,0,0
+472,Ruben Hernandez Martinez,5/1/2002,5/2/2002,2000,arrested,hispanic,male ,american,0,0,1,0,1,0,0,0,0,0,0
+473,Timmy John Weber,5/7/2002,4/28/2002,2000,arrested,white,male ,american,1,1,1,0,0,0,0,0,0,0,0
+474,Richard Steve Goldberg,6/14/2002,5/12/2007,2000,arrested,white,male ,american,1,0,1,0,0,0,0,0,0,0,0
+475,Robert William Fisher,6/29/2002,,2000,still on list,white,male ,american,1,1,0,0,1,0,0,0,0,0,0
+476,Michael Alfonso,1/23/2003,7/16/2004,2000,arrested,hispanic,male ,american,0,1,1,1,0,0,0,0,0,0,0
+477,Genero Espinosa Dorantes,8/14/2003,2/25/2006,2000,arrested,hispanic,male ,mexican,1,1,0,1,0,0,0,0,0,0,0
+478,Diego Leon Montoya Sanchez,5/6/2004,9/10/2007,2000,arrested,hispanic,male ,colombian,0,0,0,0,1,0,1,0,1,0,0
+479,Chaunson Lavel McKibbins,11/9/2004,10/29/2004,2000,arrested,black,male ,american,0,1,0,1,0,0,0,0,0,0,0
+480,Jorge Alberto Lopez-Orozco,3/17/2005,10/7/2009,2000,arrested,hispanic,male ,mexican,1,1,0,0,0,0,0,0,0,0,0
+481,Michael Paul Astorga,4/1/2006,4/3/2006,2000,arrested,hispanic,male ,american,0,1,0,0,0,0,0,0,0,0,1
+482,Warren Steed Jeffs,5/6/2006,8/28/2006,2000,arrested,white,male ,american,1,0,1,0,0,1,0,0,0,0,0
+483,Ralph B. Phillips,9/7/2006,9/8/2006,2000,surrender,white,male ,american,0,1,0,0,0,0,0,0,0,0,1
+484,John W. Parsons,9/30/2006,10/19/2006,2000,arrested,white,male ,american,0,1,0,0,1,0,0,0,0,1,0
+485,Emigdio Preciado Jr.,3/14/2007,7/17/2009,2000,arrested,hispanic,male ,american,0,1,0,1,1,0,0,0,1,0,1
+486,Shauntay L. Henderson,3/31/2007,3/31/2007,2000,arrested,black,female,american,0,1,0,0,0,0,0,0,1,0,0
+487,Alexis Flores,6/2/2007,,2000,still on list,hispanic,male ,honduran,1,1,0,1,0,0,0,0,0,0,0
+488,Jon Savarino Schillaci,9/7/2007,6/5/2008,2000,arrested,white,male ,american,1,0,1,0,0,0,0,0,0,0,0
+489,Jason Derek Brown,12/8/2007,,2000,still on list,white,male ,american,0,1,0,0,1,0,0,0,0,0,1
+490,Michael Jason Registe,7/26/2008,8/27/2008,2000,arrested,black,male ,american,0,1,0,0,0,0,0,0,0,0,0
+491,Edward Eugene Harper,11/29/2008,7/23/2009,2000,arrested,white,male ,american,1,0,1,0,0,0,0,0,0,0,0
+492,Joe Luis Saenz,10/19/2009,11/22/2012,2000,arrested,hispanic,male ,american,0,1,1,1,0,0,0,0,1,0,0
+493,Eduardo Ravelo,10/20/2009,6/26/2018,2000,arrested,hispanic,male ,mexican,0,0,0,0,0,0,0,0,1,0,0
+494,Semion Mogilevich,10/21/2009,12/17/2015,2000,removed,white,male ,ukrainian,0,0,0,0,0,0,1,0,1,0,0
+495,Eric Justin Toth,04/10/2012,04/20/2013,2010,arrested,white,male ,american,1,0,0,0,0,0,0,0,0,0,0
+496,Adam Christopher Mayes,05/09/2012,05/10/2012,2010,suicide,white,male ,american,1,1,0,1,0,0,0,0,0,0,0
+497,Fidel Urbina,06/05/2012,09/22/2016,2010,arrested,hispanic,male ,mexican,0,1,1,1,0,0,0,0,0,0,0
+498,Edwin Ernesto Rivera Gracias,03/14/2013,03/27/2013,2010,surrender,hispanic,male ,salvadoran,0,1,0,0,0,0,0,0,0,0,0
+499,Jose Manuel Garcia Guevara,06/17/2013,04/29/2014,2010,surrender,hispanic,male ,mexican,0,1,1,0,1,0,0,0,0,0,0
+500,Walter Lee Williams,06/17/2013,06/18/2013,2010,arrested,white,male ,american,1,0,1,0,0,0,0,0,0,0,0
+501,Juan Elias Garcia,03/26/2014,3/27/2014,2010,surrender,hispanic,male ,salvadoran,1,1,0,1,1,0,0,0,1,0,0
+502,William Bradford Bishop Jr.,04/10/2014,6/27/2018,2010,removed,white,male ,american,1,1,0,0,0,0,0,0,0,0,0
+503,Eric Matthew Frein,09/18/2014,10/30/2014,2010,arrested,white,male ,american,0,1,0,1,0,0,0,1,0,0,1
+504,Yaser Abdel Said,12/04/2014,,2010,still on list,white,male ,egyptian,1,1,0,0,0,0,0,0,0,0,0
+505,Myloh Jaqory Mason,12/17/2015,1/16/2016,2010,arrested,black,male ,american,0,1,0,1,1,0,0,0,0,0,0
+506,Brenda Delgado,4/6/2016,4/8/2016,2010,arrested,hispanic,male ,mexican,0,1,0,0,0,0,0,0,0,0,0
+507,Luis Macedo,5/19/2016,8/26/2017,2010,arrested,hispanic,male ,american,1,1,0,0,0,0,0,0,1,0,0
+508,Philip Patrick Policarpio,5/19/2016,5/29/2016,2010,arrested,asian,male ,american,1,1,0,0,0,0,0,0,1,0,0
+509,Shanika S. Minor,6/28/2016,7/1/2016,2010,arrested,black,female,american,1,1,0,0,0,0,0,0,0,0,0
+510,Marlon Jones,12/1/2016,12/2/2016,2010,arrested,black,male ,jamaican,0,1,0,1,0,0,0,0,0,0,0
+511,Robert Francis Van Wisse,12/13/2016,1/26/2017,2010,arrested,hispanic,male ,mexican,0,1,0,0,0,0,0,0,0,0,0
+512,Terry A.D. Strickland,12/15/2016,1/15/2017,2010,arrested,black,male ,american,0,1,0,0,0,0,0,0,0,0,0
+513,Walter Yovany Gomez,4/12/2017,8/11/2017,2010,arrested,hispanic,male ,american,0,1,0,0,0,0,0,0,1,0,0
+514,Bhadreshkumar Chetanbhai Patel,4/18/2017,,2010,still on list,asian,male ,indian,0,1,0,1,0,0,0,0,0,0,0
+515,Santiago Villalba Mederos,9/25/2017,,2010,still on list,hispanic,male ,american,0,1,0,1,0,0,0,0,1,0,0
+516,Alejandro Castillo,10/24/2017,,2010,still on list,hispanic,male ,american,0,1,0,0,0,0,0,0,0,0,0
+517,Jesus Roberto Munguia,11/13/2017,2/15/2018,2010,arrested,hispanic,male ,american,0,1,0,1,0,0,0,0,1,0,0
+518,Rafael Caro-Quintero,4/12/2018,,2010,still on list,hispanic,male ,mexican,0,1,0,1,0,0,0,0,1,0,1
+519,Antwan Tamon Mims,6/27/2018,7/31/2018,2010,arrested,black,male ,american,0,1,0,0,1,0,0,0,1,0,0
+520,Greg Alyn Carlson,9/27/2018,2/13/2019,2010,killed,white,male ,american,0,0,1,1,0,0,0,0,0,0,0
+521,Lamont Stephenson,10/11/2018,3/7/2019,2010,arrested,black,male ,american,0,1,0,0,0,0,0,0,0,0,0
+522,Arnoldo Jimenez,5/8/2019,,2010,still on list,hispanic,male ,american,0,1,0,0,0,0,0,0,0,0,0
+523,Eugene Palmer,5/29/19,,2010,still on list,white,male ,american,0,1,0,0,0,0,0,0,0,0,0
