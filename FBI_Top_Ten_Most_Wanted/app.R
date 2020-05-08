@@ -141,8 +141,7 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                  p("Below are the pictures of every fugitive placed on the FBI's
                                    Most Wanted Fugitive List since its inception in 1950 to 2020."),
                                  mainPanel(
-                                   slickROutput("historical",
-                                                width='100%')
+                                   slickROutput("historical")
                                  )))),
                  tabPanel("Special Cases",
                  column(4,
@@ -343,13 +342,14 @@ server <- function(input, output, session) {
   
   output$slick_pics <- renderSlickR({
     imgs <- list.files("png_pics", pattern = ".png", full.names = TRUE)
-    slickR(imgs, slideId = "sld1")
-    
+    slick <- slickR(imgs, slideId = "sld1")
+    slick + settings(centerMode = TRUE)
   })
   
   output$historical <- renderSlickR({
     imgs1 <- list.files("historical", pattern = ".png", full.names = TRUE)
-    slickR(imgs1, slideId = "sld2") 
+    slick1 <- slickR(imgs1, slideId = "sld2") 
+    slick1 + settings(adaptiveHeight = TRUE, rows = 2)
     
   })
   
