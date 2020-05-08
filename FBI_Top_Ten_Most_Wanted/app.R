@@ -7,17 +7,33 @@
 #    http://shiny.rstudio.com/
 #
 
+# Loading libraries
+
 library(shiny)
 library(janitor)
 library(lubridate)
+library(pdftools)
 library(shinythemes)
 library(broom)
 library(ggplot2)
 library(tidyverse)
+library(slickR)
+
+# Data read in of FBI's Most Wanted
 
 FBI <- read_csv("FBI_full - Sheet1.csv") %>% 
   clean_names() 
 
+pdf_convert("brown.pdf", format = "png")
+pdf_convert("patel.pdf", format = "png")
+pdf_convert("castillo.pdf", format = "png")
+pdf_convert("jimenez.pdf", format = "png")
+pdf_convert("said.pdf", format = "png")
+pdf_convert("flores.pdf", format = "png")
+pdf_convert("palmer.pdf", format = "png")
+pdf_convert("mederos.pdf", format = "png")
+pdf_convert("quintero.pdf", format = "png")
+pdf_convert("fisher.pdf", format = "png")
 
 # Define UI for application that draws a histogram
 ui <- navbarPage(theme = shinytheme("sandstone"),
@@ -100,7 +116,8 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                                          "Murder" = "murder",
                                                          "Sexual Crimes" = "sexual_crimes",
                                                          "Other Violent Crime" = "additional_violent_crime",
-                                                         "Politically Motivated Crime" = "political_group",
+                                                         "Ideologically Motivated Crime" = "political_group",
+                                                         "Criminal Enterprise" = "criminal_enterprise",
                                                          "Terrorism" = "terrorism",
                                                          "White Collar Crime" = "white_collar_crime",
                                                          "Escapee" = "escapee"),
@@ -122,8 +139,15 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                                selected = "race")),
                                  mainPanel(
                                    plotOutput("distPlot"))),
-                          column(7,
-                                 h1("Mugshots of the Top Ten Most Wanted Through History"))),
+                          column(12,
+                                 h1("Current Top Ten Most Wanted Fugitives"),
+                                 p("To view the current members of the Top Ten Most Wanted Fugitive
+                                   List, please click on the arrows below.")),
+                          mainPanel(
+                            align = "center",
+                            slickROutput("slick_pics",
+                                         width = '100%', 
+                                         height = '200px'))),
                  tabPanel("Special Cases",
                  column(4,
                         h1("Do law enforcement victims effect outcomes?"),
@@ -148,7 +172,7 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                  column(10,
                         mainPanel(plotOutput("other_groups")))),
                  tabPanel("Findings",
-                          column(5,
+                          column(7,
                           h1("Efficacy"),
                           p("Of the observations in this dataset, 83.56% of the fugitives were apprehended. An additional
                             4.78% surrendered."),
@@ -196,6 +220,9 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
 server <- function(input, output, session) {
   
   output$crime_breakdown <- renderPlot({
+    
+    # Pivot crime longer to count by crime
+    
     crime_breakdown <- FBI %>% 
       select(-number,
              -name,
@@ -215,8 +242,13 @@ server <- function(input, output, session) {
       count(crime) %>% 
       filter(n > 1)
     
+    # Plot so that crime is on x and count is on y with fill = crime.
+    
     ggplot(crime_breakdown, aes(x = crime, y = n, fill = crime)) +
       geom_col(stat = "identity") + 
+      
+      # Modify legend labels for clarification.
+      
       scale_fill_discrete(
                         breaks=c("additional_violent_crime",
                                  "murder",
@@ -232,12 +264,15 @@ server <- function(input, output, session) {
                                  "Murder", 
                                  "Personal Crimes",
                                  "Escape",
-                                 "Politically Motivated Crime",
+                                 "Ideologically Motivated Crime",
                                  "Terrorism",
                                  "Criminal Enterprise",
                                  "White Collar Crime",
                                  "Sexual Crime",
                                  "Crimes Against Children")) +
+      
+      # Shorten x-axis labels for reader clarity.
+      
       scale_x_discrete(
         breaks=c("additional_violent_crime",
                  "murder",
@@ -254,13 +289,16 @@ server <- function(input, output, session) {
                  "Murder", 
                  "Personal",
                  "Escape",
-                 "Political",
+                 "Ideological",
                  "Terrorism",
                  "Criminal Enterprise",
                  "White Collar",
                  "Sexual",
                  "Crimes Against
     Children")) +
+      
+      # Add title, axis-labels, and modified legend title.
+      
       labs(
         title = "Frequency of Crimes on the List (Total)",
         fill = "Type of Crime",
@@ -276,6 +314,7 @@ server <- function(input, output, session) {
   
   output$distPlot <- renderPlot({
     
+    # Filter out where the input equals 0.
     
     pie_chart <- FBI %>% 
       filter(! (.data[[input$demographics]] == 0)) %>% 
@@ -283,14 +322,22 @@ server <- function(input, output, session) {
       count() %>% 
       mutate(prop = (n)/(sum(n))) 
     
+    # Create bar plot to add coord_polar.
+    
     pie_chart %>% 
       ggplot(aes(x = "", y = n, fill = .data[[input$demographics]])) +
       geom_bar(width = 1, stat = "identity", col = "grey") +
       coord_polar("y", start = 0) + 
+    
+      # Add theme for consistency.
+      
       theme_dark() +
       theme(axis.text = element_blank(),
             axis.ticks = element_blank(),
             panel.grid  = element_blank()) +
+      
+      # Eliminate unnecessary borders/labels.
+      
       labs(
         x = NULL,
         y = NULL, 
@@ -298,16 +345,32 @@ server <- function(input, output, session) {
       )
   })
   
+  output$slick_pics <- renderSlickR({
+    imgs <- list.files("png_pics", pattern = ".png")
+    slick <- slickR(imgs) 
+    slick + settings(centerMode = TRUE)
+  })
+  
   output$crime_year <- renderPlot({
+    
+    # Mutate columns to act as effective dates.
     
     FBI_year<- FBI %>% 
         mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
         mutate(date_removed = as.Date(date_removed, format="%m/%d/%Y")) %>% 
+      
+    # Subtract columns to get total days on list.
+      
         mutate(days = (date_removed - date_added)) %>% 
         mutate(year = format(date_added, "%Y")) 
     
+    # Filter for decade input.
+    
     crime <- FBI %>% 
       filter(decade == input$decade) %>% 
+    
+    # Pivot crime longer for counts.
+      
       pivot_longer(cols = c("additional_violent_crime",
                            "murder",
                            "personal_crimes", 
@@ -325,8 +388,13 @@ server <- function(input, output, session) {
       count(crime) %>% 
       filter(n > 1)
     
+    # Follow same formatting as previous output.
+    
     ggplot(crime, aes(x = crime, y = n, fill = crime)) +
       geom_col(stat = "identity") + 
+      
+    # Modify legend objects.
+      
       scale_fill_discrete(
         breaks=c("additional_violent_crime",
                  "murder",
@@ -342,12 +410,15 @@ server <- function(input, output, session) {
                  "Murder", 
                  "Personal Crimes",
                  "Escape",
-                 "Politically Motivated",
+                 "Ideologically Motivated",
                  "Terrorism",
                  "Criminal Enterprise",
                  "White Collar Crime",
                  "Sexual Crime",
                  "Crimes Against Children")) +
+    
+    # Modify x-axis labels.
+      
       scale_x_discrete(
         breaks=c("additional_violent_crime",
                  "murder",
@@ -364,13 +435,16 @@ server <- function(input, output, session) {
                  "Murder", 
                  "Personal",
                  "Escape",
-                 "Political",
+                 "Ideological",
                  "Terror",
                  "Criminal Enterprise",
                  "White Collar",
                  "Sexual",
                  "Crimes Against
       Children")) +
+      
+    # Add title, axis-labels, and captions.
+      
       labs(
         fill = "Type of Crime",
         x = "Crime",
@@ -384,16 +458,33 @@ server <- function(input, output, session) {
   
   output$over_time_crime <- renderPlot({
     
+    # Filter out where input = 0 (OR NO).
+    
     crime_over_time <- FBI %>% 
       filter(! (.data[[input$crime]] == 0)) %>% 
       group_by(decade) %>% 
       select(input$crime) %>% 
       count(input$crime)
     
+    # Map count by decade. 
+    
     ggplot(crime_over_time, aes(x = decade, y = n)) +
-      geom_line(group = 1, color = "pink", size = .75)+
+    
+      # Style element to enhance visibility.
+      
+      geom_line(group = 1, color = "pink", size = .75) +
+      
+      # Add ylim to maintain consistent axis length
+      # For better comparison
+      
       ylim(0, 150) +
+      
+      # Add points with consistent coloring.
+      
       geom_point(col = "pink") +
+      
+      # Add relevant details for viewer clarity.
+      
       labs(
         x = "Year",
         y = "Count",
@@ -406,20 +497,8 @@ server <- function(input, output, session) {
   
   output$police_effect <- renderPlot({
     
-    crimes <- FBI %>% 
-      select(-number,
-             -name,
-             -date_added,
-             -date_removed,
-             -decade,
-             -reason_for_removal,
-             -race,
-             -nationality,
-             -gender,
-             - police_victim) %>% 
-      pivot_longer(everything(),
-                   names_to = "crime",
-                   values_to = "count") 
+    # Edit date columns to be dates for total day 
+    # calculation.
     
     FBI1 <- FBI %>% 
       mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
@@ -427,21 +506,39 @@ server <- function(input, output, session) {
       mutate(days = (date_removed - date_added)) %>% 
       mutate(days = as.numeric(days))
     
+    # Make police_victim a factor, instead of numeric.
+    # This will aid in the linear regression output.
+    
     Edit <- FBI1 %>% 
       mutate(police_victim = as.factor(police_victim))
+    
+    # Perform linear regression tying police victims to
+    # days on list. Select relevant columns after tidying.
     
     lm <- lm(days ~ police_victim, data = Edit) %>% 
       tidy(conf.int = TRUE) %>% 
       select(term, estimate, conf.low, conf.high, std.error) 
     
+    # Graph object lm with x = term and y = estimate.
+    
     ggplot(lm, aes(x = term, y = estimate)) +
+      
+      # Use the estimate minus standard error and plus SE to 
+      # map the ranges of the estimates.
+      
       geom_errorbar(aes(ymin = estimate-std.error, ymax = estimate+std.error), width = 0.1) +
       geom_line() +
       geom_point() +
+      
+      # Modify x-axis to be self-explanatory.
+      
       scale_x_discrete(
         breaks = c("(Intercept)", "police_victim1"),
         labels = c("No", "Yes")
       ) +
+      
+      # Add relevant information for interpretation.
+      
       labs(
         title = "Estimated Length on List (in Days) as Related to Police Victims",
         subtitle = "Using a Linear Regression Showing Upper and Lower Confidence Intervals",
@@ -455,27 +552,49 @@ server <- function(input, output, session) {
   
   output$gang_effect <- renderPlot({
     
+    # Modify dates for subtraction to get total
+    # days on list.
+    
     FBI1 <- FBI %>% 
       mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
       mutate(date_removed = as.Date(date_removed, format="%m/%d/%Y")) %>% 
       mutate(days = (date_removed - date_added)) %>% 
       mutate(days = as.numeric(days))
     
+    # Mutate as factor for clarification.
+    
     enterprise <- FBI1 %>% 
       mutate(criminal_enterprise = as.factor(criminal_enterprise))
+    
+    # Linear model between length of placement
+    # and connections to criminal enterprises.
+    # Select relevant columns.
     
     lm2 <- lm(days ~ criminal_enterprise, data = enterprise) %>% 
       tidy(conf.int = TRUE) %>% 
       select(term, estimate, conf.low, conf.high, std.error) 
     
+    # Map with the term and estimate.
+    
     ggplot(lm2, aes(x = term, y = estimate)) +
+      
+      # Use the SE to get a lower and upper bound
+      # for the estimate.
+      
       geom_errorbar(aes(ymin = estimate-std.error, ymax = estimate+std.error), width = 0.1) +
       geom_line() +
       geom_point() +
+      
+      # Clarify x-axis labels.
+      
       scale_x_discrete(
         breaks = c("(Intercept)", "criminal_enterprise1"),
         labels = c("No", "Yes")
       ) +
+      
+      # Adding info for viewer about the 
+      # regression.
+      
       labs(
         title = "Estimated Length on List (in Days) as Related to Criminal Enterprise Affiliation",
         subtitle = "Using a Linear Regression Showing Upper and Lower Confidence Intervals",
@@ -488,6 +607,8 @@ server <- function(input, output, session) {
   
   output$other_groups <- renderPlot({
     
+    # Modify dates for subtraction to get total
+    # days on list.
     
     FBI1 <- FBI %>% 
       mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
@@ -495,21 +616,40 @@ server <- function(input, output, session) {
       mutate(days = (date_removed - date_added)) %>% 
       mutate(days = as.numeric(days))
     
+    # Mutate as factor for clarification.
+    
     political <- FBI1 %>% 
       mutate(political_group = as.factor(political_group))
+    
+    # Linear model between length of placement
+    # and connections to ideological groups.
+    # Select relevant columns.
     
     lm3 <- lm(days ~ political_group, data = political) %>% 
       tidy(conf.int = TRUE) %>% 
       select(term, estimate, conf.low, conf.high, std.error) 
     
+    # Map with the term and estimate.
+    
     ggplot(lm3, aes(x = term, y = estimate)) +
+      
+      # Use the SE to get a lower and upper bound
+      # for the estimate.
+      
       geom_errorbar(aes(ymin = estimate-std.error, ymax = estimate+std.error), width = 0.1) +
       geom_line() +
       geom_point() +
+      
+      # Clarify x-axis labels.
+      
       scale_x_discrete(
         breaks = c("(Intercept)", "political_group1"),
         labels = c("No", "Yes")
       ) +
+      
+      # Adding info for viewer about the 
+      # regression.
+      
       labs(
         title = "Estimated Length on List (in Days) as Related to Ideologically Motivated Crime",
         subtitle = "Using a Linear Regression Showing Upper and Lower Confidence Intervals",

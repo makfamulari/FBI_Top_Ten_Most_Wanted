@@ -17,8 +17,10 @@ FBI <- read_csv("FBI_Top_Ten_Most_Wanted/FBI_full - Sheet1.csv") %>%
   clean_names() 
 ```
 
-
+# Data Set-up To Experiment with Columns
 ```{r data_to_shiny, echo = FALSE}
+
+# Adding in mutates and 
 
 FBI1 <- FBI %>% 
   mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
@@ -169,4 +171,16 @@ crime1 %>%
       ) +
       theme_dark()
 ```
+
+```{r}
+FBI %>% 
+  select(reason_for_removal) %>% 
+  group_by(reason_for_removal) %>% 
+  count()
+
+```
+```{r}
+
+```
+
 
