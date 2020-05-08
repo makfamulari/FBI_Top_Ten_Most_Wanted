@@ -103,7 +103,7 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                                          "Terrorism" = "terrorism",
                                                          "White Collar Crime" = "white_collar_crime",
                                                          "Escapee" = "escapee"),
-                                             selected = "murder"))),
+                                             selected = "crimes_against_children"))),
                           column(12,
                                  mainPanel(
                                    plotOutput("over_time_crime")
@@ -359,20 +359,15 @@ server <- function(input, output, session) {
   
   output$over_time_crime <- renderPlot({
     
-    FBI_over_year<- FBI %>% 
-      mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
-      mutate(date_removed = as.Date(date_removed, format="%m/%d/%Y")) %>% 
-      mutate(days = (date_removed - date_added)) %>% 
-      mutate(year = format(as.Date(date_added, format = "%m/%d/%Y"), "%Y"))
-    
-    crime_over_time <- FBI_over_year %>% 
+    crime_over_time <- FBI %>% 
       filter(! (.data[[input$crime]] == 0)) %>% 
       group_by(decade) %>% 
-      count()
+      select(input$crime) %>% 
+      count(input$crime)
     
     ggplot(crime_over_time, aes(x = decade, y = n)) +
       geom_line(group = 1, color = "pink", size = .75)+
-      ylim(0, 30) +
+      ylim(0, 150) +
       geom_point(col = "pink") +
       labs(
         x = "Year",
