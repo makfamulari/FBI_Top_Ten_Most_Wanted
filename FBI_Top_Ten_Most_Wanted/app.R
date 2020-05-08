@@ -127,19 +127,23 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                         p("The relationship between length of time on list (filtered to exclude removals) and law enforcement victims
                           is plotted below. Note: law enforcement victims include police officers, fish and game wardens, detectives,
                           air marshalls, sheriffs, highway patrol officers, and any other uniformed officer. Victimization includes
-                          attempted assault/murder/kidnapping, as well as actualized assault/murder/kidnapping."),
-                        p("To interpret graph, note that x = 1 means YES, there is a police victim and x = 0 means NO, there is
-                          not a police victim.")),
+                          attempted assault/murder/kidnapping, as well as actualized assault/murder/kidnapping.")),
                  column(12,
                         mainPanel(plotOutput("police_effect"))),
                  column(4,
                         h1("Does criminal organization affiliation effect outcomes?"),
                         p("Criminal organizations are defined as gangs, mob, or other affiliations with criminal groups. The 
-                          relationship between criminal organization affiliation and days on the list is graphed below."),
-                        p("To interpret graph, note that x = 1 means YES, there is a group affiliation and x = 0 means NO, there is
-                          not a group affiliation.")),
+                          relationship between criminal organization affiliation and days on the list is graphed below.")),
                  column(12,
-                        mainPanel(plotOutput("gang_effect")))),
+                        mainPanel(plotOutput("gang_effect"))),
+                 column(4,
+                        h1("Does other group organization crime effect outcome?"),
+                        p("Other group organization crime is defined as a criminal offense relating to political/religious/ideological 
+                          groups. Examples include Warren Jeffs, whose crimes (child sexual assault) were commited under the Fundamentalist
+                          Church of Jesus Christ of Latter-Day Saints. Another example would be Clayton Lee Waagner, placed on the list for
+                          a conviction of bank robbery and anti-abortion terrorism.")),
+                 column(12,
+                        mainPanel(plotOutput("other_groups")))),
                  tabPanel("Findings",
                           column(5,
                           h1("Efficacy"),
@@ -398,56 +402,101 @@ server <- function(input, output, session) {
     FBI1 <- FBI %>% 
       mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
       mutate(date_removed = as.Date(date_removed, format="%m/%d/%Y")) %>% 
-      mutate(days = (date_removed - date_added))
+      mutate(days = (date_removed - date_added)) %>% 
+      mutate(days = as.numeric(days))
     
-    FBI1 %>%
-      filter(! reason_for_removal == "removal") %>% 
-      ggplot(aes(x = police_victim, y = days)) +
+    Edit <- FBI1 %>% 
+      mutate(police_victim = as.factor(police_victim))
+    
+    lm <- lm(days ~ police_victim, data = Edit) %>% 
+      tidy(conf.int = TRUE) %>% 
+      select(term, estimate, conf.low, conf.high, std.error) 
+    
+    ggplot(lm, aes(x = term, y = estimate)) +
+      geom_errorbar(aes(ymin = estimate-std.error, ymax = estimate+std.error), width = 0.1) +
+      geom_line() +
       geom_point() +
-      labs(x = "Police Victim?", 
-           y = "Days on List", 
-           title = "The Effect of Police Victims on Length on List",
-           subtitle = "Conclusion: There is Virtually No Effect on Outcomes by Police Victims") +
-      geom_smooth(method = "glm", se = FALSE) +
-      theme_classic()
+      scale_x_discrete(
+        breaks = c("(Intercept)", "police_victim1"),
+        labels = c("No", "Yes")
+      ) +
+      labs(
+        title = "Estimated Length on List (in Days) as Related to Police Victims",
+        subtitle = "Using a Linear Regression Showing Upper and Lower Confidence Intervals",
+        x = "Police Victim?",
+        y = "Length on List (Days)"
+      ) +
+      theme_dark()
       
   })
   
   
   output$gang_effect <- renderPlot({
     
-    crimes <- FBI %>% 
-      select(-number,
-             -name,
-             -date_added,
-             -date_removed,
-             -decade,
-             -reason_for_removal,
-             -race,
-             -nationality,
-             -gender,
-             - police_victim) %>% 
-      pivot_longer(everything(),
-                   names_to = "crime",
-                   values_to = "count") 
+    FBI1 <- FBI %>% 
+      mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
+      mutate(date_removed = as.Date(date_removed, format="%m/%d/%Y")) %>% 
+      mutate(days = (date_removed - date_added)) %>% 
+      mutate(days = as.numeric(days))
+    
+    enterprise <- FBI1 %>% 
+      mutate(criminal_enterprise = as.factor(criminal_enterprise))
+    
+    lm2 <- lm(days ~ criminal_enterprise, data = enterprise) %>% 
+      tidy(conf.int = TRUE) %>% 
+      select(term, estimate, conf.low, conf.high, std.error) 
+    
+    ggplot(lm2, aes(x = term, y = estimate)) +
+      geom_errorbar(aes(ymin = estimate-std.error, ymax = estimate+std.error), width = 0.1) +
+      geom_line() +
+      geom_point() +
+      scale_x_discrete(
+        breaks = c("(Intercept)", "criminal_enterprise1"),
+        labels = c("No", "Yes")
+      ) +
+      labs(
+        title = "Estimated Length on List (in Days) as Related to Criminal Enterprise Affiliation",
+        subtitle = "Using a Linear Regression Showing Upper and Lower Confidence Intervals",
+        x = "Criminal Enterprise?",
+        y = "Length on List (Days)"
+      ) +
+      theme_dark()
+    
+  })
+  
+  output$other_groups <- renderPlot({
+    
     
     FBI1 <- FBI %>% 
       mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
       mutate(date_removed = as.Date(date_removed, format="%m/%d/%Y")) %>% 
-      mutate(days = (date_removed - date_added))
+      mutate(days = (date_removed - date_added)) %>% 
+      mutate(days = as.numeric(days))
     
-    FBI1 %>%
-      filter(! reason_for_removal == "removal") %>% 
-      ggplot(aes(x = criminal_enterprise, y = days)) +
+    political <- FBI1 %>% 
+      mutate(political_group = as.factor(political_group))
+    
+    lm3 <- lm(days ~ political_group, data = political) %>% 
+      tidy(conf.int = TRUE) %>% 
+      select(term, estimate, conf.low, conf.high, std.error) 
+    
+    ggplot(lm3, aes(x = term, y = estimate)) +
+      geom_errorbar(aes(ymin = estimate-std.error, ymax = estimate+std.error), width = 0.1) +
+      geom_line() +
       geom_point() +
-      labs(x = "Criminal Enterprise Affiliation?", y = "Days on List", 
-           title = "The Effect of Criminal Enterprise Affliliation on Length on List",
-           subtitle = "Conclusion: Criminal Affliliation is Assosiated with Longer Lengths on the List") +
-      geom_smooth(method = "glm", se = FALSE) +
-      theme_classic()
+      scale_x_discrete(
+        breaks = c("(Intercept)", "political_group1"),
+        labels = c("No", "Yes")
+      ) +
+      labs(
+        title = "Estimated Length on List (in Days) as Related to Ideologically Motivated Crime",
+        subtitle = "Using a Linear Regression Showing Upper and Lower Confidence Intervals",
+        x = "Ideological Motivation?",
+        y = "Length on List (Days)"
+      ) +
+      theme_dark()
     
-  })
-    
+  })  
 }
 
 
