@@ -76,7 +76,7 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                      href = "https://github.com/makfamulari/FBI_Top_Ten_Most_Wanted"),
                                    "."))),
                  tabPanel("The Crimes",
-                          column(9,
+                          column(12,
                                  h1("What crimes end up on the list?"),
                                  h1("Total:"),
                                  p("The following chart lists the frequency of crimes on the FBI's Most Wanted Lists 
@@ -377,7 +377,7 @@ server <- function(input, output, session) {
                  "Escape",
                  "Ideological",
                  "Terrorism",
-                 "Criminal Enterprise",
+                 "Enterprise",
                  "White Collar",
                  "Sexual",
                  "C.A.C.")) +
@@ -768,7 +768,7 @@ server <- function(input, output, session) {
                  "Escape",
                  "Ideological",
                  "Terror",
-                 "Criminal Enterprise",
+                 "Enterprise",
                  "White Collar",
                  "Sexual",
                  "C.A.C.")) +
