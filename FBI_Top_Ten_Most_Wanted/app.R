@@ -218,6 +218,7 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                    column(12,
                                    plotOutput("the2010s"))))),
                           tabPanel("Current List",
+                                   align = "center",
                                  h1("Current Top Ten Most Wanted Fugitives"),
                                  p("To view the current members of the Top Ten Most Wanted Fugitive
                                    List, please click on the arrows below."),
@@ -225,6 +226,7 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                             width = 12,
                             slickROutput("slick_pics"))),
                           tabPanel("Historical List",
+                                   align = "center",
                                  h1("Historical Top Ten Most Wanted Fugitives:"),
                                  p("Below are the pictures of every fugitive placed on the FBI's
                                    Most Wanted Fugitive List since its inception in 1950 to 2020."),
@@ -665,9 +667,9 @@ server <- function(input, output, session) {
   })
   
   output$historical <- renderSlickR({
-    imgs1 <- list.files("historical", pattern = ".png", full.names = TRUE)
-    slick1 <- slickR(imgs1, slideId = "sld2") 
-    slick1 + settings(adaptiveHeight = TRUE)
+    imgs <- pdftools::pdf_convert("FBI_pictures_edited.pdf",format = 'png',verbose = FALSE)
+    slick2 <- slickR(imgs, slideId = "sld2")
+    slick2 + settings(centerMode = TRUE)
     
   })
   
