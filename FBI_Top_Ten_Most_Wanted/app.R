@@ -49,7 +49,7 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                  p("- The criminal no longer fits the criteria"),
                                  h1("Purpose"),
                                  p("The purpose of this project is to investigate the members of the FBI's Top Ten Most
-                                   Wanted list from the year it was created (1950) to present day(2020). Specifically, we aim to discover the types of
+                                   Wanted list from the year it was created (1950) to present day (2020). Specifically, we aim to discover the types of
                                    criminals that merit placement based upon biographical information and the nature of their
                                    crimes. The list's members beginning in the year 1950 and to the year 2020 will be
                                    studied."),
@@ -235,22 +235,22 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                  )))),
                  tabPanel("Special Cases",
                  column(4,
-                        h1("Do law enforcement victims effect outcomes?"),
-                        p("The relationship between length of time on list (filtered to exclude removals) and law enforcement victims
+                        h1("Do law enforcement victims affect outcomes?"),
+                        p("The relationship between length of time on list and law enforcement victims
                           is plotted below. Note: law enforcement victims include police officers, fish and game wardens, detectives,
                           air marshalls, sheriffs, highway patrol officers, and any other uniformed officer. Victimization includes
                           attempted assault/murder/kidnapping, as well as actualized assault/murder/kidnapping.")),
                  column(10,
                         mainPanel(plotOutput("police_effect"))),
                  column(4,
-                        h1("Does criminal organization affiliation effect outcomes?"),
-                        p("Criminal organizations are defined as gangs, mob, or other affiliations with criminal groups. The 
+                        h1("Does criminal organization affiliation affect outcomes?"),
+                        p("Criminal organizations are defined as gangs, mobs, mafias, or criminal enterprises. The 
                           relationship between criminal organization affiliation and days on the list is graphed below.")),
                  column(10,
                         mainPanel(plotOutput("gang_effect"))),
                  column(4,
-                        h1("Does other group organization crime effect outcome?"),
-                        p("Other group organization crime is defined as a criminal offense relating to political/religious/ideological 
+                        h1("Does ideologically motivated crime affect outcome?"),
+                        p("Ideologically motivated crime is defined as a criminal offense relating to political/religious/ideological 
                           groups. Examples include Warren Jeffs, whose crimes (child sexual assault) were commited under the Fundamentalist
                           Church of Jesus Christ of Latter-Day Saints. Another example would be Clayton Lee Waagner, placed on the list for
                           a conviction of bank robbery and anti-abortion terrorism.")),
@@ -278,9 +278,11 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                           p("Crimes relating to ideological groups emerged and peaked in the 1970s. 
                             Terrorism first emerged in the 1990s and quickly dissipated."),
                           h1("The Criminals"),
-                          p("For all years of the FBI's Most Wanted List, the average fugitive on the FBI's Most Wanted List was white,
-                            male, and american. Nationality and race of the fugitives differed from this average slightly in later years.
-                            However, female fugitives remained continuously rare (with a total of ten women on the list)."),
+                          p("For most decades in the FBI's Most Wanted List, the average fugitive on the FBI's Most Wanted List was white,
+                            male, and american. The only decade in which white offenders did not make up the greatest percentage of 
+                            fugitives was 2010-2019. American nationality comprised the majority of offenders in all decades. The decades
+                            in which there was most diversity in nationality were the 1990s and 2010s. The demographic with the most
+                            consistency was gender, with females only comprising a total of ten slots on the list throughout history."),
                           h1("Special Cases"),
                           h3("Method:"),
                           p("To determine connection between special cases and outcomes, a generalized linear
@@ -345,7 +347,7 @@ server <- function(input, output, session) {
                                  "white_collar_crime",
                                  "sexual_crimes",
                                  "crimes_against_children"),
-                        labels=c("Other Violent Crime", 
+                        labels=c("Other Violent Crime (OVC)", 
                                  "Murder", 
                                  "Personal Crimes",
                                  "Escape",
@@ -354,7 +356,7 @@ server <- function(input, output, session) {
                                  "Criminal Enterprise",
                                  "White Collar Crime",
                                  "Sexual Crime",
-                                 "Crimes Against Children")) +
+                                 "Crimes Against Children (CAC)")) +
       
       # Shorten x-axis labels for reader clarity.
       
@@ -369,8 +371,7 @@ server <- function(input, output, session) {
                  "white_collar_crime",
                  "sexual_crimes",
                  "crimes_against_children"),
-        labels=c("Other Violent
-    Crime", 
+        labels=c("O.V.C.", 
                  "Murder", 
                  "Personal",
                  "Escape",
@@ -379,8 +380,7 @@ server <- function(input, output, session) {
                  "Criminal Enterprise",
                  "White Collar",
                  "Sexual",
-                 "Crimes Against
-    Children")) +
+                 "C.A.C.")) +
       
       # Add title, axis-labels, and modified legend title.
       
@@ -661,15 +661,25 @@ server <- function(input, output, session) {
   })
   
   output$slick_pics <- renderSlickR({
+    
+    # Define imgs using a list file of a folder in 
+    # local environment. Use pattern png for
+    # best outcome.
+    
     imgs <- list.files("png_pics", pattern = ".png", full.names = TRUE)
     slick <- slickR(imgs, slideId = "sld1")
     slick + settings(centerMode = TRUE)
   })
   
   output$historical <- renderSlickR({
+    
+    # Use pdf tools to coerce pdf to png. 
+    
     imgs <- pdftools::pdf_convert("FBI_pictures_edited.pdf",format = 'png',verbose = FALSE)
-    slick2 <- slickR(imgs, slideId = "sld2")
-    slick2 + settings(centerMode = TRUE)
+    
+    # Display slickR.
+    
+    slickR(imgs, slideId = "sld2")
     
   })
   
@@ -728,7 +738,7 @@ server <- function(input, output, session) {
                  "white_collar_crime",
                  "sexual_crimes",
                  "crimes_against_children"),
-        labels=c("Other Violent Crime", 
+        labels=c("Other Violent Crime (OVC)", 
                  "Murder", 
                  "Personal Crimes",
                  "Escape",
@@ -737,7 +747,7 @@ server <- function(input, output, session) {
                  "Criminal Enterprise",
                  "White Collar Crime",
                  "Sexual Crime",
-                 "Crimes Against Children")) +
+                 "Crimes Against Children(CAC)")) +
     
     # Modify x-axis labels.
       
@@ -752,8 +762,7 @@ server <- function(input, output, session) {
                  "white_collar_crime",
                  "sexual_crimes",
                  "crimes_against_children"),
-        labels=c("Other Violent
-      Crime", 
+        labels=c("O.V.C.", 
                  "Murder", 
                  "Personal",
                  "Escape",
@@ -762,8 +771,7 @@ server <- function(input, output, session) {
                  "Criminal Enterprise",
                  "White Collar",
                  "Sexual",
-                 "Crimes Against
-      Children")) +
+                 "C.A.C.")) +
       
     # Add title, axis-labels, and captions.
       

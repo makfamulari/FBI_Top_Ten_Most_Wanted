@@ -1,9 +1,12 @@
 ---
-title: "Top Ten Most Wanted"
+title: "Top Ten Most Wanted (Work Before Shiny)"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
+
+# Set-up for data. 
+
 knitr::opts_chunk$set(echo = TRUE)
 library(shiny)
 library(janitor)
@@ -18,20 +21,11 @@ FBI <- read_csv("FBI_Top_Ten_Most_Wanted/FBI_full - Sheet1.csv") %>%
   clean_names() 
 ```
 
-```{r}
-data <- FBI %>% 
-            filter(decade == 1950) %>% 
-            select(race) %>% 
-            group_by(race) %>% 
-            count()
 
-data
-```
-
-# Data Set-up To Experiment with Columns
+### Data Set-up To Experiment with Columns
 ```{r data_to_shiny, echo = FALSE}
 
-# Adding in mutates and 
+# Adding in mutates and manipulating a column for days.
 
 FBI1 <- FBI %>% 
   mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
@@ -39,71 +33,102 @@ FBI1 <- FBI %>%
   mutate(days = (date_removed - date_added)) %>% 
   mutate(days = as.numeric(days))
 
-FBI1
+# This is used in the linear regression models on tab "Special Cases"
+
+head(FBI1)
 
 ```
 
-```{r}
+### Running a Sample Linear Regression with Error Bars
+```{r lm, echo = FALSE, message = FALSE}
+
+# Mutate as factor to prevent numeric consideration to 
+# alter responses.
 
 Edit <- FBI1 %>% 
   mutate(police_victim = as.factor(police_victim))
+
+# Perform linear regression and tidy data with 
+# select for relevant terms.
 
 lm <- lm(days ~ police_victim, data = Edit) %>% 
   tidy(conf.int = TRUE) %>% 
   select(term, estimate, conf.low, conf.high, std.error) 
 
-lm
+# Plot lm with x as term and y as estimate.
 
 ggplot(lm, aes(x = term, y = estimate)) +
+  
+  # Add in a geom_error bar with width modification
+  # for clarity.
+  
   geom_errorbar(aes(ymin = estimate-std.error, ymax = estimate+std.error), width = 0.1) +
   geom_line() +
   geom_point() +
+  
+  # Repair x axis for clarity.
+  
   scale_x_discrete(
     breaks = c("(Intercept)", "police_victim1"),
     labels = c("No", "Yes")
   ) +
+  
+  # Add in details.
+  
   labs(
     title = "Estimated Length on List (in Days) as Related to Police Victims",
     subtitle = "Using a Linear Regression Showing Upper and Lower Confidence Intervals",
     x = "Police Victim?",
     y = "Length on List (Days)"
   )
- pie_chart <- data %>% 
-      filter(! (.data[[input$demographics]] == 0)) %>% 
-      group_by(.data[[input$demographics]]) %>% 
+```
+
+```{r pie_chart, echo = FALSE}
+
+# Here is a sample pie chart for replication.
+
+# Group_by column of importance (replaced
+# with input in shiny) and count.
+
+ pie_chart <- FBI %>% 
+      group_by(nationality) %>% 
       count() %>% 
       mutate(prop = (n)/(sum(n))) 
+
+# Use ggplot with x as a blank value (you cannot exclude x, 
+# it needs the quotes). Use n as y, and fill by nationality.
+
+pie_chart %>% 
+      ggplot(aes(x = "", y = n, fill = nationality)) +
+      geom_bar(width = 1, stat = "identity", col = "grey") +
+  
+  # Add coord polar to make pie chart.
+  
+      coord_polar("y", start = 0) +
+      theme_dark() +
+  
+  # Text and axis ticks are distracting.
+  # Use element_blank to eliminate them.
+  
+      theme(axis.text = element_blank(),
+            axis.ticks = element_blank(),
+            panel.grid  = element_blank()) +
+      
+  # Eliminate unnecessary borders/labels.
+      labs(
+        x = NULL,
+        y = NULL, 
+        fill = NULL
+      )
 ```
 
-```{r mutate_practice, echo = FALSE}
-FBI1 <- FBI %>% 
-      mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
-      mutate(date_removed = as.Date(date_removed, format="%m/%d/%Y")) %>% 
-      mutate(days = (date_removed - date_added))
 
-crime <- FBI1 %>% 
-      pivot_longer(cols = c("additional_violent_crime",
-                 "murder",
-                 "personal_crimes", 
-                 "escapee",
-                 "criminal_enterprise",
-                 "white_collar_crime",
-                 "sexual_crimes",
-                 "crimes_against_children"),
-                   names_to = "crime",
-                   values_to = "count") 
-   
-    lm()
-    crime %>%
-      filter(police_victim == "1") %>% 
-      ggplot(aes(x = crime, y = days)) +
-      geom_point() +
-      labs(x = "Days on List", y = "Police Victim", 
-           title = "The Effect of Police Victims on Length on List") +
-      geom_smooth(method = "lm", se = FALSE)
-```
+```{r calculations, echo = FALSE}
 
-```{r stats, echo = FALSE}
+# These are calculations used in the tab "Findings"
+
+# Count total reason_for_removal observations.
+
 total <- FBI %>% 
   select(reason_for_removal) %>% 
   count()
@@ -113,90 +138,28 @@ stat <- FBI %>%
   group_by(reason_for_removal) %>% 
   count()
 
-stat
+stat 
 
-arrests <- (267/304) * 100
+# Calculate total fugitives.
 
-surrender <- (14/304) * 100
+n <- 437+10+12+24+10+5+25 
+
+# Calculate percent of arrests.
+
+arrests <- (437/n) * 100
+
+# Calculate percent of surrenders. 
+
+surrender <- (25/n) * 100
 
 
 arrests
 surrender
 ```
 
-```{r adding_year_graph, echo = FALSE}
 
-new <- FBI1 %>% 
-  mutate(year = format(date_added, "%Y"))
 
-```
 
-```{r graph_over_time, echo = FALSE}
 
-FBI_year<- FBI %>% 
-      mutate(date_added = as.Date(date_added, format="%m/%d/%Y")) %>% 
-      mutate(date_removed = as.Date(date_removed, format="%m/%d/%Y")) %>% 
-      mutate(days = (date_removed - date_added)) %>% 
-      mutate(year = format(date_added, "%Y"))
-    
-crime1 <- FBI_year %>% 
-      filter(year == 1950:1955) %>% 
-      pivot_longer(cols = c("additional_violent_crime",
-                            "murder",
-                            "personal_crimes", 
-                            "escapee",
-                            "criminal_enterprise",
-                            "white_collar_crime",
-                            "sexual_crimes",
-                            "crimes_against_children"),
-                   names_to = "crime",
-                   values_to = "count") %>% 
-      group_by(year) %>% 
-      count(crime)
-
-crime1
-
-crime1 %>% 
-  group_by(crime) %>% 
-  ggplot(aes(x = year, y = n, group = crime, color = crime)) +
-      geom_line() + 
-      geom_point() +
-      scale_color_discrete(
-        breaks=c("additional_violent_crime",
-                 "murder",
-                 "personal_crimes", 
-                 "escapee",
-                 "criminal_enterprise",
-                 "white_collar_crime",
-                 "sexual_crimes",
-                 "crimes_against_children"),
-        labels=c("Other Violent Crime", 
-                 "Murder", 
-                 "Personal Crimes",
-                 "Escape",
-                 "Criminal Enterprise",
-                 "White Collar Crime",
-                 "Sexual Crime",
-                 "Crimes Against Children")) +
-      labs(
-        col = "Type of Crime",
-        x = "Year",
-        y = "Count",
-        caption = "*Personal Crimes: assault, kidnapping, attempted kidnapping, attempted murder.
-        *Additional violent crime: robbery, bank robbery, robbery with a deadly weapon."
-      ) +
-      theme_dark()
-```
-
-```{r}
-FBI %>% 
-  select(reason_for_removal) %>% 
-  group_by(reason_for_removal) %>% 
-  count()
-
-```
-```{r}
-
-```
 
 
