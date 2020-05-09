@@ -118,23 +118,111 @@ ui <- navbarPage(theme = shinytheme("sandstone"),
                                  ))),
                  tabPanel("The Criminals",
                           tabsetPanel(
-                          tabPanel("Demographics",
-                                 h1("Demographics of Criminals"),
-                                 p("To view the demographics of the criminals placed on the FBI's Most Wanted List, 
-                                   please select a demographic characteristic."),
+                            tabPanel("Demographics",
+                                     fluidPage(
+                                     fluidRow(
+                                     h1("Demographics of Criminals"),
+                                     p("To view the demographics of the criminals placed on the FBI's Most Wanted List, 
+                                       please select a demographic characteristic."),
+                                     h3("Total:"),
+                                     sidebarPanel(
+                                       selectInput("demographics1", "Choose a demographic characteristic:",
+                                                   choices = c("Race" = "race", 
+                                                               "Gender" = "gender",
+                                                               "Nationality" = "nationality"),
+                                                   selected = "race"))),
+                                 mainPanel(
+                                   plotOutput("distPlot")),
+                                 fluidRow(
+                                   column(12,
+                                 h3("1950s:"),
                                  sidebarPanel(
-                                  selectInput("demographics", "Choose a demographic characteristic:",
+                                   selectInput("demographics2", "Choose a demographic characteristic:",
                                                choices = c("Race" = "race", 
                                                            "Gender" = "gender",
                                                            "Nationality" = "nationality"),
-                                               selected = "race")),
+                                               selected = "race")))),
                                  mainPanel(
-                                   plotOutput("distPlot"))),
+                                   column(12,
+                                   plotOutput("the50s"))),
+                                 fluidRow(
+                                   column(12,
+                                 h3("1960s:"),
+                                 sidebarPanel(
+                                   selectInput("demographics3", "Choose a demographic characteristic:",
+                                               choices = c("Race" = "race", 
+                                                           "Gender" = "gender",
+                                                           "Nationality" = "nationality"),
+                                               selected = "race")))),
+                                 mainPanel(
+                                   column(12,
+                                   plotOutput("the60s"))),
+                                 fluidRow(
+                                   column(12,
+                                 h3("1970s:"),
+                                 sidebarPanel(
+                                   selectInput("demographics4", "Choose a demographic characteristic:",
+                                               choices = c("Race" = "race", 
+                                                           "Gender" = "gender",
+                                                           "Nationality" = "nationality"),
+                                               selected = "race")))),
+                                 mainPanel(
+                                   column(12,
+                                   plotOutput("the70s"))),
+                                 fluidRow(
+                                   column(12,
+                                 h3("1980s:"),
+                                 sidebarPanel(
+                                   selectInput("demographics5", "Choose a demographic characteristic:",
+                                               choices = c("Race" = "race", 
+                                                           "Gender" = "gender",
+                                                           "Nationality" = "nationality"),
+                                               selected = "race")))),
+                                 mainPanel(
+                                   column(12,
+                                   plotOutput("the80s"))),
+                                 fluidRow(
+                                   column(12,
+                                 h3("1990s:"),
+                                 sidebarPanel(
+                                   selectInput("demographics6", "Choose a demographic characteristic (1990):",
+                                               choices = c("Race" = "race", 
+                                                           "Gender" = "gender",
+                                                           "Nationality" = "nationality"),
+                                               selected = "race")))),
+                                 mainPanel(
+                                   column(12,
+                                   plotOutput("the90s"))),
+                                 fluidRow(
+                                   column(12,
+                                 h3("2000s:"),
+                                 sidebarPanel(
+                                   selectInput("demographics7", "Choose a demographic characteristic:",
+                                               choices = c("Race" = "race", 
+                                                           "Gender" = "gender",
+                                                           "Nationality" = "nationality"),
+                                               selected = "race")))),
+                                 mainPanel(
+                                   column(12,
+                                   plotOutput("the2000s"))),
+                                 fluidRow(
+                                   column(12,
+                                 h3("2010s:"),
+                                 sidebarPanel(
+                                   selectInput("demographics8", "Choose a demographic characteristic:",
+                                               choices = c("Race" = "race", 
+                                                           "Gender" = "gender",
+                                                           "Nationality" = "nationality"),
+                                               selected = "race")))),
+                                 mainPanel(
+                                   column(12,
+                                   plotOutput("the2010s"))))),
                           tabPanel("Current List",
                                  h1("Current Top Ten Most Wanted Fugitives"),
                                  p("To view the current members of the Top Ten Most Wanted Fugitive
                                    List, please click on the arrows below."),
                           mainPanel(
+                            width = 12,
                             slickROutput("slick_pics"))),
                           tabPanel("Historical List",
                                  h1("Historical Top Ten Most Wanted Fugitives:"),
@@ -310,20 +398,250 @@ server <- function(input, output, session) {
   output$distPlot <- renderPlot({
     
     # Filter out where the input equals 0.
+  pie_chart <- FBI %>% 
+    filter(! (.data[[input$demographics1]] == 0)) %>% 
+    group_by(.data[[input$demographics1]]) %>% 
+    count() %>% 
+    mutate(prop = (n)/(sum(n))) 
+  
+  # Create bar plot to add coord_polar.
+  
+  pie_chart %>% 
+    ggplot(aes(x = "", y = n, fill = .data[[input$demographics1]])) +
+    geom_bar(width = 1, stat = "identity", col = "grey") +
+    coord_polar("y", start = 0) + 
+    
+    # Add theme for consistency.
+    
+    theme_dark() +
+    theme(axis.text = element_blank(),
+          axis.ticks = element_blank(),
+          panel.grid  = element_blank()) +
+    
+    # Eliminate unnecessary borders/labels.
+    
+    labs(
+      x = NULL,
+      y = NULL, 
+      fill = NULL
+    )
+})
+  
+  output$the50s <- renderPlot({
+    
+    # Filter out where the input equals 0.
     
     pie_chart <- FBI %>% 
-      filter(! (.data[[input$demographics]] == 0)) %>% 
-      group_by(.data[[input$demographics]]) %>% 
+      filter(decade == 1950) %>% 
+      group_by(.data[[input$demographics2]]) %>% 
       count() %>% 
       mutate(prop = (n)/(sum(n))) 
     
     # Create bar plot to add coord_polar.
     
     pie_chart %>% 
-      ggplot(aes(x = "", y = n, fill = .data[[input$demographics]])) +
+      ggplot(aes(x = "", y = n, fill = .data[[input$demographics2]])) +
       geom_bar(width = 1, stat = "identity", col = "grey") +
       coord_polar("y", start = 0) + 
+      
+      # Add theme for consistency.
+      
+      theme_dark() +
+      theme(axis.text = element_blank(),
+            axis.ticks = element_blank(),
+            panel.grid  = element_blank()) +
+      
+      # Eliminate unnecessary borders/labels.
+      
+      labs(
+        x = NULL,
+        y = NULL, 
+        fill = NULL
+      )
+  })
+  
+  output$the60s <- renderPlot({
     
+    # Filter out where the input equals 0.
+    
+    pie_chart <- FBI %>% 
+      filter(decade == 1960) %>% 
+      group_by(.data[[input$demographics3]]) %>% 
+      count() %>% 
+      mutate(prop = (n)/(sum(n))) 
+    
+    # Create bar plot to add coord_polar.
+    
+    pie_chart %>% 
+      ggplot(aes(x = "", y = n, fill = .data[[input$demographics3]])) +
+      geom_bar(width = 1, stat = "identity", col = "grey") +
+      coord_polar("y", start = 0) + 
+      
+      # Add theme for consistency.
+      
+      theme_dark() +
+      theme(axis.text = element_blank(),
+            axis.ticks = element_blank(),
+            panel.grid  = element_blank()) +
+      
+      # Eliminate unnecessary borders/labels.
+      
+      labs(
+        x = NULL,
+        y = NULL, 
+        fill = NULL
+      )
+  })
+  
+  output$the70s <- renderPlot({
+    
+    # Filter out where the input equals 0.
+    
+    pie_chart <- FBI %>% 
+      filter(decade == 1970) %>% 
+      group_by(.data[[input$demographics4]]) %>% 
+      count() %>% 
+      mutate(prop = (n)/(sum(n))) 
+    
+    # Create bar plot to add coord_polar.
+    
+    pie_chart %>% 
+      ggplot(aes(x = "", y = n, fill = .data[[input$demographics4]])) +
+      geom_bar(width = 1, stat = "identity", col = "grey") +
+      coord_polar("y", start = 0) + 
+      
+      # Add theme for consistency.
+      
+      theme_dark() +
+      theme(axis.text = element_blank(),
+            axis.ticks = element_blank(),
+            panel.grid  = element_blank()) +
+      
+      # Eliminate unnecessary borders/labels.
+      
+      labs(
+        x = NULL,
+        y = NULL, 
+        fill = NULL
+      )
+  })
+  
+  output$the80s <- renderPlot({
+    
+    # Filter out where the input equals 0.
+    
+    pie_chart <- FBI %>% 
+      filter(decade == 1980) %>% 
+      group_by(.data[[input$demographics5]]) %>% 
+      count() %>% 
+      mutate(prop = (n)/(sum(n))) 
+    
+    # Create bar plot to add coord_polar.
+    
+    pie_chart %>% 
+      ggplot(aes(x = "", y = n, fill = .data[[input$demographics5]])) +
+      geom_bar(width = 1, stat = "identity", col = "grey") +
+      coord_polar("y", start = 0) + 
+      
+      # Add theme for consistency.
+      
+      theme_dark() +
+      theme(axis.text = element_blank(),
+            axis.ticks = element_blank(),
+            panel.grid  = element_blank()) +
+      
+      # Eliminate unnecessary borders/labels.
+      
+      labs(
+        x = NULL,
+        y = NULL, 
+        fill = NULL
+      )
+  })
+  
+  output$the90s <- renderPlot({
+    
+    # Filter out where the input equals 0.
+    
+    pie_chart <- FBI %>% 
+      filter(decade == 1990) %>% 
+      group_by(.data[[input$demographics6]]) %>% 
+      count() %>% 
+      mutate(prop = (n)/(sum(n))) 
+    
+    # Create bar plot to add coord_polar.
+    
+    pie_chart %>% 
+      ggplot(aes(x = "", y = n, fill = .data[[input$demographics6]])) +
+      geom_bar(width = 1, stat = "identity", col = "grey") +
+      coord_polar("y", start = 0) + 
+      
+      # Add theme for consistency.
+      
+      theme_dark() +
+      theme(axis.text = element_blank(),
+            axis.ticks = element_blank(),
+            panel.grid  = element_blank()) +
+      
+      # Eliminate unnecessary borders/labels.
+      
+      labs(
+        x = NULL,
+        y = NULL, 
+        fill = NULL
+      )
+  })
+  
+  output$the2000s <- renderPlot({
+    
+    # Filter out where the input equals 0.
+    
+    pie_chart <- FBI %>% 
+      filter(decade == 2000) %>% 
+      group_by(.data[[input$demographics7]]) %>% 
+      count() %>% 
+      mutate(prop = (n)/(sum(n))) 
+    
+    # Create bar plot to add coord_polar.
+    
+    pie_chart %>% 
+      ggplot(aes(x = "", y = n, fill = .data[[input$demographics7]])) +
+      geom_bar(width = 1, stat = "identity", col = "grey") +
+      coord_polar("y", start = 0) + 
+      
+      # Add theme for consistency.
+      
+      theme_dark() +
+      theme(axis.text = element_blank(),
+            axis.ticks = element_blank(),
+            panel.grid  = element_blank()) +
+      
+      # Eliminate unnecessary borders/labels.
+      
+      labs(
+        x = NULL,
+        y = NULL, 
+        fill = NULL
+      )
+  })
+  
+  output$the2010s <- renderPlot({
+    
+    # Filter out where the input equals 0.
+    
+    pie_chart <- FBI %>% 
+      filter(decade == 2010) %>% 
+      group_by(.data[[input$demographics8]]) %>% 
+      count() %>% 
+      mutate(prop = (n)/(sum(n))) 
+    
+    # Create bar plot to add coord_polar.
+    
+    pie_chart %>% 
+      ggplot(aes(x = "", y = n, fill = .data[[input$demographics8]])) +
+      geom_bar(width = 1, stat = "identity", col = "grey") +
+      coord_polar("y", start = 0) + 
+      
       # Add theme for consistency.
       
       theme_dark() +
@@ -349,7 +667,7 @@ server <- function(input, output, session) {
   output$historical <- renderSlickR({
     imgs1 <- list.files("historical", pattern = ".png", full.names = TRUE)
     slick1 <- slickR(imgs1, slideId = "sld2") 
-    slick1 + settings(adaptiveHeight = TRUE, rows = 2)
+    slick1 + settings(adaptiveHeight = TRUE)
     
   })
   
